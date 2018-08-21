@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huangwenren.github.io/"/>
-  <updated>2018-08-21T07:51:51.299Z</updated>
+  <updated>2018-08-21T08:27:58.512Z</updated>
   <id>https://huangwenren.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo中使用本地图片</title>
+    <link href="https://huangwenren.github.io/2018/08/21/Hexo%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/"/>
+    <id>https://huangwenren.github.io/2018/08/21/Hexo中使用本地图片/</id>
+    <published>2018-08-21T08:16:20.000Z</published>
+    <updated>2018-08-21T08:27:58.512Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2018/08/21/Hexo中使用本地图片/nasa.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/2018/08/21/Hexo中使用本地图片/nasa.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Python入门</title>
