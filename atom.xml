@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huangwenren.github.io/"/>
-  <updated>2018-08-21T08:27:58.512Z</updated>
+  <updated>2018-08-23T09:40:26.864Z</updated>
   <id>https://huangwenren.github.io/</id>
   
   <author>
@@ -17,20 +17,66 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hexo中使用本地图片</title>
-    <link href="https://huangwenren.github.io/2018/08/21/Hexo%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/"/>
-    <id>https://huangwenren.github.io/2018/08/21/Hexo中使用本地图片/</id>
-    <published>2018-08-21T08:16:20.000Z</published>
-    <updated>2018-08-21T08:27:58.512Z</updated>
+    <title>first-network测试</title>
+    <link href="https://huangwenren.github.io/2018/08/23/first-network%E6%B5%8B%E8%AF%95/"/>
+    <id>https://huangwenren.github.io/2018/08/23/first-network测试/</id>
+    <published>2018-08-23T09:34:02.052Z</published>
+    <updated>2018-08-23T09:40:26.864Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/2018/08/21/Hexo中使用本地图片/nasa.jpg" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html" target="_blank" rel="noopener">参照官方文档</a></p><h2 id="下载-fabric-sample-代码"><a href="#下载-fabric-sample-代码" class="headerlink" title="下载 fabric-sample 代码"></a>下载 fabric-sample 代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/hyperledger/fabric-samples.git</span><br></pre></td></tr></table></figure><h2 id="进入-fabric-sample-目录"><a href="#进入-fabric-sample-目录" class="headerlink" title="进入 fabric-sample 目录"></a>进入 fabric-sample 目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> fabric-samples/first-network</span><br></pre></td></tr></table></figure><h2 id="下载二进制文件，需指定当前-fabric-sample-的版本"><a href="#下载二进制文件，需指定当前-fabric-sample-的版本" class="headerlink" title="下载二进制文件，需指定当前 fabric-sample 的版本"></a>下载二进制文件，需指定当前 fabric-sample 的版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://goo.gl/6wtTN5 | bash -s <span class="variable">$&#123;VERSION&#125;</span></span><br></pre></td></tr></table></figure><h2 id="生成网络构件"><a href="#生成网络构件" class="headerlink" title="生成网络构件"></a>生成网络构件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./byfn.sh generate</span><br></pre></td></tr></table></figure><h2 id="启动网络"><a href="#启动网络" class="headerlink" title="启动网络"></a>启动网络</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./byfn.sh up</span><br></pre></td></tr></table></figure><h2 id="关闭网络"><a href="#关闭网络" class="headerlink" title="关闭网络"></a>关闭网络</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./byfn.sh down</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;img src=&quot;/2018/08/21/Hexo中使用本地图片/nasa.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-
+        &lt;p&gt;&lt;a href=&quot;https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;参照官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;下载
+      
+    
+    </summary>
+    
+      <category term="Fabric" scheme="https://huangwenren.github.io/categories/Fabric/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>docker入门</title>
+    <link href="https://huangwenren.github.io/2018/08/22/docker%E5%85%A5%E9%97%A8/"/>
+    <id>https://huangwenren.github.io/2018/08/22/docker入门/</id>
+    <published>2018-08-22T08:54:03.000Z</published>
+    <updated>2018-08-22T09:00:23.503Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="删除所有容器"><a href="#删除所有容器" class="headerlink" title="删除所有容器"></a>删除所有容器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f $(docker ps -aq)</span><br></pre></td></tr></table></figure><h2 id="删除所有镜像"><a href="#删除所有镜像" class="headerlink" title="删除所有镜像"></a>删除所有镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f $(docker images -aq)</span><br></pre></td></tr></table></figure><h2 id="容器中查看-Linux-版本"><a href="#容器中查看-Linux-版本" class="headerlink" title="容器中查看 Linux 版本"></a>容器中查看 Linux 版本</h2><p>正确的姿势：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/issue</span><br></pre></td></tr></table></figure></p><p>错误的姿势：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/version </span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">uname -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上诉两个方法查到的是宿主机的系统</span></span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;删除所有容器&quot;&gt;&lt;a href=&quot;#删除所有容器&quot; class=&quot;headerlink&quot; title=&quot;删除所有容器&quot;&gt;&lt;/a&gt;删除所有容器&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
+      
+    
+    </summary>
+    
+      <category term="Docker" scheme="https://huangwenren.github.io/categories/Docker/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo中使用本地图片</title>
+    <link href="https://huangwenren.github.io/2018/08/21/Hexo%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/"/>
+    <id>https://huangwenren.github.io/2018/08/21/Hexo中使用本地图片/</id>
+    <published>2018-08-21T08:16:20.000Z</published>
+    <updated>2018-08-21T08:49:13.832Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://wonder4.me/2017/02/20/Using-Local-Image-in-Hexo/" target="_blank" rel="noopener">参考文章</a><br><img src="/2018/08/21/Hexo中使用本地图片/nasa.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://wonder4.me/2017/02/20/Using-Local-Image-in-Hexo/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;参考文章&lt;/a&gt;&lt;br&gt;&lt;img src=&quot;/2018/08/21/Hexo中使
       
     
     </summary>
