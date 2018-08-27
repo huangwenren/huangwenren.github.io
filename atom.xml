@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huangwenren.github.io/"/>
-  <updated>2018-08-23T09:40:26.864Z</updated>
+  <updated>2018-08-26T08:30:23.518Z</updated>
   <id>https://huangwenren.github.io/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo文章摘要</title>
+    <link href="https://huangwenren.github.io/2018/08/26/Hexo%E6%96%87%E7%AB%A0%E6%91%98%E8%A6%81/"/>
+    <id>https://huangwenren.github.io/2018/08/26/Hexo文章摘要/</id>
+    <published>2018-08-26T08:28:54.357Z</published>
+    <updated>2018-08-26T08:30:23.518Z</updated>
+    
+    <content type="html"><![CDATA[<p>摘要</p><a id="more"></a><p>正文内容</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;摘要&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo 使用攻略" scheme="https://huangwenren.github.io/categories/Hexo-%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux常用命令</title>
+    <link href="https://huangwenren.github.io/2018/08/23/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <id>https://huangwenren.github.io/2018/08/23/Linux常用命令/</id>
+    <published>2018-08-23T09:46:29.156Z</published>
+    <updated>2018-08-23T09:47:24.923Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="yum-y-upgrade-和-yum-y-update"><a href="#yum-y-upgrade-和-yum-y-update" class="headerlink" title="yum -y upgrade 和 yum -y update"></a>yum -y upgrade 和 yum -y update</h2><p>升级前<br>系统版本：  centos5.5<br>内核版本：  2.6.18-194.el5<br>升级前做过简单配置文件修改<br>yum -y upgrade    升级后<br>系统版本：    centos5.7<br>内核版本：  2.6.18-194.el5<br>yum -y update    升级后<br>系统版本：    centos5.7<br>内核版本：    2.6.18-238.el5</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;yum-y-upgrade-和-yum-y-update&quot;&gt;&lt;a href=&quot;#yum-y-upgrade-和-yum-y-update&quot; class=&quot;headerlink&quot; title=&quot;yum -y upgrade 和 yum -y update&quot;&gt;&lt;/a&gt;
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://huangwenren.github.io/categories/Linux/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>first-network测试</title>
@@ -36,6 +79,30 @@
     </summary>
     
       <category term="Fabric" scheme="https://huangwenren.github.io/categories/Fabric/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vagrant入门</title>
+    <link href="https://huangwenren.github.io/2018/08/22/vagrant%E5%85%A5%E9%97%A8/"/>
+    <id>https://huangwenren.github.io/2018/08/22/vagrant入门/</id>
+    <published>2018-08-22T09:05:40.000Z</published>
+    <updated>2018-08-26T08:36:30.861Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://www.vagrantbox.es/" target="_blank" rel="noopener">- vagrant box 下载地址</a></p><ul><li>vagrant box add    添加box的操作</li><li>vagrant init    初始化box的操作，会生成- vagrant的配置文件- vagrantfile</li><li>vagrant up    启动本地环境</li><li>vagrant ssh    通过 ssh 登录本地环境所在虚拟机</li><li>vagrant halt    关闭本地环境</li><li>vagrant suspend    暂停本地环境</li><li>vagrant resume    恢复本地环境</li><li>vagrant reload    修改了 - vagrantfile 后，使之生效（相当于先 halt，再 up）</li><li>vagrant destroy    彻底移除本地环境</li><li>vagrant box list    显示当前已经添加的box列表</li><li>vagrant box remove    删除相应的box</li><li>vagrant package    打包命令，可以把当前的运行的虚拟机环境进行打包</li><li>vagrant plugin    用于安装卸载插件</li><li>vagrant status    获取当前虚拟机的状态</li><li>vagrant global-status    显示当前用户- vagrant的所有环境状态</li></ul><p>vagrant box add <a href="http://servername/boxes/environment.box" target="_blank" rel="noopener">http://servername/boxes/environment.box</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://www.vagrantbox.es/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;- vagrant box 下载地址&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;vagrant box add    添加box的操作&lt;/li&gt;
+&lt;
+      
+    
+    </summary>
     
     
   </entry>
