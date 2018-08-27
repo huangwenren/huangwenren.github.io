@@ -104,7 +104,7 @@
     <link href="https://huangwenren.github.io/2018/08/22/vagrant%E5%85%A5%E9%97%A8/"/>
     <id>https://huangwenren.github.io/2018/08/22/vagrant入门/</id>
     <published>2018-08-22T09:05:40.000Z</published>
-    <updated>2018-08-27T14:54:48.140Z</updated>
+    <updated>2018-08-27T14:57:10.308Z</updated>
     
     <content type="html"><![CDATA[<h2 id="版本选择"><a href="#版本选择" class="headerlink" title="版本选择"></a>版本选择</h2><p><strong>Vagrant 和 VirtualBox 的版本需要对应好，否则 Vagrant 可能会无法操作VirtualBox</strong></p><p>目前在以下版本测试成功（<a href="https://www.vagrantup.com/docs/virtualbox/" target="_blank" rel="noopener">查看 Vagrant 支持的 VirtualBox 版本</a>）：</p><ul><li>Vagrant 1.9.3</li><li>VirtualBox 4.3.40</li></ul><h2 id="Vagrant-Box-下载"><a href="#Vagrant-Box-下载" class="headerlink" title="Vagrant Box 下载"></a>Vagrant Box 下载</h2><p><a href="http://www.vagrantbox.es/" target="_blank" rel="noopener">Vagrant Box 下载地址</a></p><h2 id="Vagrant-常用命令"><a href="#Vagrant-常用命令" class="headerlink" title="Vagrant 常用命令"></a>Vagrant 常用命令</h2><ul><li>vagrant box add    添加box的操作</li><li>vagrant init    初始化box的操作，会生成 vagrant 的配置文件 Vagrantfile</li><li>vagrant up    启动本地环境</li><li>vagrant ssh    通过 ssh 登录本地环境所在虚拟机</li><li>vagrant halt    关闭本地环境</li><li>vagrant suspend    暂停本地环境</li><li>vagrant resume    恢复本地环境</li><li>vagrant reload    修改了 Vagrantfile 后，使之生效（相当于先 halt，再 up）</li><li>vagrant destroy    彻底移除本地环境</li><li>vagrant box list    显示当前已经添加的box列表</li><li>vagrant box remove    删除相应的box</li><li>vagrant package    打包命令，可以把当前的运行的虚拟机环境进行打包</li><li>vagrant plugin    用于安装卸载插件</li><li>vagrant status    获取当前虚拟机的状态</li><li>vagrant global-status    显示当前用户 vagrant 的所有环境状态</li></ul><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul><li><a href="https://www.imooc.com/search/?words=vagrant" target="_blank" rel="noopener">慕课网教学视频</a></li><li><a href="https://github.com/apanly/mooc/tree/master/vagrant" target="_blank" rel="noopener">慕课网教学视频对应 GitHub</a></li></ul>]]></content>
     
@@ -116,6 +116,8 @@
       
     
     </summary>
+    
+      <category term="Vagrant" scheme="https://huangwenren.github.io/categories/Vagrant/"/>
     
     
   </entry>
