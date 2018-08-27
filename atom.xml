@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huangwenren.github.io/"/>
-  <updated>2018-08-26T08:30:23.518Z</updated>
+  <updated>2018-08-27T03:45:11.268Z</updated>
   <id>https://huangwenren.github.io/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Top K问题</title>
+    <link href="https://huangwenren.github.io/2018/08/27/TopK%E9%97%AE%E9%A2%98/"/>
+    <id>https://huangwenren.github.io/2018/08/27/TopK问题/</id>
+    <published>2018-08-27T03:44:40.549Z</published>
+    <updated>2018-08-27T03:45:11.268Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="https://huangwenren.github.io/categories/Algorithm/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Hexo文章摘要</title>
@@ -41,9 +57,9 @@
     <link href="https://huangwenren.github.io/2018/08/23/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>https://huangwenren.github.io/2018/08/23/Linux常用命令/</id>
     <published>2018-08-23T09:46:29.156Z</published>
-    <updated>2018-08-23T09:47:24.923Z</updated>
+    <updated>2018-08-26T12:43:27.681Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="yum-y-upgrade-和-yum-y-update"><a href="#yum-y-upgrade-和-yum-y-update" class="headerlink" title="yum -y upgrade 和 yum -y update"></a>yum -y upgrade 和 yum -y update</h2><p>升级前<br>系统版本：  centos5.5<br>内核版本：  2.6.18-194.el5<br>升级前做过简单配置文件修改<br>yum -y upgrade    升级后<br>系统版本：    centos5.7<br>内核版本：  2.6.18-194.el5<br>yum -y update    升级后<br>系统版本：    centos5.7<br>内核版本：    2.6.18-238.el5</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="yum-y-upgrade-和-yum-y-update"><a href="#yum-y-upgrade-和-yum-y-update" class="headerlink" title="yum -y upgrade 和 yum -y update"></a>yum -y upgrade 和 yum -y update</h2><p><a href="https://www.jianshu.com/p/4df7692bdc2b" target="_blank" rel="noopener">参考该博客</a></p><p>升级前</p><p>update<br>If  run  without any packages, update will update every currently installed package.  </p><p>If one or more packages or package globs are specified, Yum will only update the listed packages.  </p><p>While updating packages, yum will ensure that all dependencies are satisfied. (See Specifying package names for more  information)  </p><p>If the packages or globs specified match to packages which are not currently installed then update will not install them. update operates on groups, files, provides and filelists just like the “install” command.</p><p>If the main obsoletes configure option is true (default) or the –obsoletes flag is present yum will include package obsoletes in its calculations  -  this<br>makes it better for distro-version changes, for example: upgrading from somelinux 8.0 to somelinux 9.</p><p>Note  that “update” works on installed packages first, and only if there are no matches does it look for available packages. The difference is most notice‐able<br>when you do “update foo-1-2” which will act exactly as “update foo” if foo-1-2 is installed. You can use the “update-to” if you’d prefer that  nothing<br>happen in the above case.</p><p>upgrade<br>Is the same as the update command with the –obsoletes flag set. See update for more details.</p><p>首先, <code>yum update</code> 和 <code>yum upgrade</code> 的功能是一样的，都是将需要更新的 package 更新至软件源中的最新版。</p><p>唯一不同是：<code>yum upgrade</code>  会删除旧版本的 package ，而 <code>yum update</code> 则会保留。</p><p>注意！如果你的某些软件依赖旧版本的 package，请使用 <code>yum update</code></p><h1 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h1><p>sed %s/${old}/${new}/g<br>sed </p>]]></content>
     
     <summary type="html">
     
@@ -64,9 +80,9 @@
     <link href="https://huangwenren.github.io/2018/08/23/first-network%E6%B5%8B%E8%AF%95/"/>
     <id>https://huangwenren.github.io/2018/08/23/first-network测试/</id>
     <published>2018-08-23T09:34:02.052Z</published>
-    <updated>2018-08-23T09:40:26.864Z</updated>
+    <updated>2018-08-27T03:57:09.294Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html" target="_blank" rel="noopener">参照官方文档</a></p><h2 id="下载-fabric-sample-代码"><a href="#下载-fabric-sample-代码" class="headerlink" title="下载 fabric-sample 代码"></a>下载 fabric-sample 代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/hyperledger/fabric-samples.git</span><br></pre></td></tr></table></figure><h2 id="进入-fabric-sample-目录"><a href="#进入-fabric-sample-目录" class="headerlink" title="进入 fabric-sample 目录"></a>进入 fabric-sample 目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> fabric-samples/first-network</span><br></pre></td></tr></table></figure><h2 id="下载二进制文件，需指定当前-fabric-sample-的版本"><a href="#下载二进制文件，需指定当前-fabric-sample-的版本" class="headerlink" title="下载二进制文件，需指定当前 fabric-sample 的版本"></a>下载二进制文件，需指定当前 fabric-sample 的版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://goo.gl/6wtTN5 | bash -s <span class="variable">$&#123;VERSION&#125;</span></span><br></pre></td></tr></table></figure><h2 id="生成网络构件"><a href="#生成网络构件" class="headerlink" title="生成网络构件"></a>生成网络构件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./byfn.sh generate</span><br></pre></td></tr></table></figure><h2 id="启动网络"><a href="#启动网络" class="headerlink" title="启动网络"></a>启动网络</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./byfn.sh up</span><br></pre></td></tr></table></figure><h2 id="关闭网络"><a href="#关闭网络" class="headerlink" title="关闭网络"></a>关闭网络</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./byfn.sh down</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html" target="_blank" rel="noopener">参照官方文档</a></p><h2 id="下载-fabric-sample-代码"><a href="#下载-fabric-sample-代码" class="headerlink" title="下载 fabric-sample 代码"></a>下载 fabric-sample 代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/hyperledger/fabric-samples.git</span><br></pre></td></tr></table></figure><h2 id="进入-fabric-sample-目录"><a href="#进入-fabric-sample-目录" class="headerlink" title="进入 fabric-sample 目录"></a>进入 fabric-sample 目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> fabric-samples/first-network</span><br></pre></td></tr></table></figure><h2 id="下载二进制文件，需指定当前-fabric-sample-的版本"><a href="#下载二进制文件，需指定当前-fabric-sample-的版本" class="headerlink" title="下载二进制文件，需指定当前 fabric-sample 的版本"></a>下载二进制文件，需指定当前 fabric-sample 的版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://goo.gl/6wtTN5 | bash -s <span class="variable">$&#123;VERSION&#125;</span></span><br></pre></td></tr></table></figure><h2 id="生成网络构件"><a href="#生成网络构件" class="headerlink" title="生成网络构件"></a>生成网络构件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./byfn.sh generate</span><br></pre></td></tr></table></figure><h2 id="启动网络"><a href="#启动网络" class="headerlink" title="启动网络"></a>启动网络</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./byfn.sh up</span><br></pre></td></tr></table></figure><h2 id="关闭网络"><a href="#关闭网络" class="headerlink" title="关闭网络"></a>关闭网络</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./byfn.sh down</span><br></pre></td></tr></table></figure><p><a href="https://stackoverflow.com/questions/48151804/error-got-unexpected-status-forbidden-failed-to-reach-implicit-threshold-of?rq=1" target="_blank" rel="noopener">https://stackoverflow.com/questions/48151804/error-got-unexpected-status-forbidden-failed-to-reach-implicit-threshold-of?rq=1</a></p>]]></content>
     
     <summary type="html">
     
@@ -84,22 +100,19 @@
   </entry>
   
   <entry>
-    <title>vagrant入门</title>
+    <title>Vagrant 入门</title>
     <link href="https://huangwenren.github.io/2018/08/22/vagrant%E5%85%A5%E9%97%A8/"/>
     <id>https://huangwenren.github.io/2018/08/22/vagrant入门/</id>
     <published>2018-08-22T09:05:40.000Z</published>
-    <updated>2018-08-26T08:36:30.861Z</updated>
+    <updated>2018-08-27T14:54:48.140Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="http://www.vagrantbox.es/" target="_blank" rel="noopener">- vagrant box 下载地址</a></p><ul><li>vagrant box add    添加box的操作</li><li>vagrant init    初始化box的操作，会生成- vagrant的配置文件- vagrantfile</li><li>vagrant up    启动本地环境</li><li>vagrant ssh    通过 ssh 登录本地环境所在虚拟机</li><li>vagrant halt    关闭本地环境</li><li>vagrant suspend    暂停本地环境</li><li>vagrant resume    恢复本地环境</li><li>vagrant reload    修改了 - vagrantfile 后，使之生效（相当于先 halt，再 up）</li><li>vagrant destroy    彻底移除本地环境</li><li>vagrant box list    显示当前已经添加的box列表</li><li>vagrant box remove    删除相应的box</li><li>vagrant package    打包命令，可以把当前的运行的虚拟机环境进行打包</li><li>vagrant plugin    用于安装卸载插件</li><li>vagrant status    获取当前虚拟机的状态</li><li>vagrant global-status    显示当前用户- vagrant的所有环境状态</li></ul><p>vagrant box add <a href="http://servername/boxes/environment.box" target="_blank" rel="noopener">http://servername/boxes/environment.box</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="版本选择"><a href="#版本选择" class="headerlink" title="版本选择"></a>版本选择</h2><p><strong>Vagrant 和 VirtualBox 的版本需要对应好，否则 Vagrant 可能会无法操作VirtualBox</strong></p><p>目前在以下版本测试成功（<a href="https://www.vagrantup.com/docs/virtualbox/" target="_blank" rel="noopener">查看 Vagrant 支持的 VirtualBox 版本</a>）：</p><ul><li>Vagrant 1.9.3</li><li>VirtualBox 4.3.40</li></ul><h2 id="Vagrant-Box-下载"><a href="#Vagrant-Box-下载" class="headerlink" title="Vagrant Box 下载"></a>Vagrant Box 下载</h2><p><a href="http://www.vagrantbox.es/" target="_blank" rel="noopener">Vagrant Box 下载地址</a></p><h2 id="Vagrant-常用命令"><a href="#Vagrant-常用命令" class="headerlink" title="Vagrant 常用命令"></a>Vagrant 常用命令</h2><ul><li>vagrant box add    添加box的操作</li><li>vagrant init    初始化box的操作，会生成 vagrant 的配置文件 Vagrantfile</li><li>vagrant up    启动本地环境</li><li>vagrant ssh    通过 ssh 登录本地环境所在虚拟机</li><li>vagrant halt    关闭本地环境</li><li>vagrant suspend    暂停本地环境</li><li>vagrant resume    恢复本地环境</li><li>vagrant reload    修改了 Vagrantfile 后，使之生效（相当于先 halt，再 up）</li><li>vagrant destroy    彻底移除本地环境</li><li>vagrant box list    显示当前已经添加的box列表</li><li>vagrant box remove    删除相应的box</li><li>vagrant package    打包命令，可以把当前的运行的虚拟机环境进行打包</li><li>vagrant plugin    用于安装卸载插件</li><li>vagrant status    获取当前虚拟机的状态</li><li>vagrant global-status    显示当前用户 vagrant 的所有环境状态</li></ul><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul><li><a href="https://www.imooc.com/search/?words=vagrant" target="_blank" rel="noopener">慕课网教学视频</a></li><li><a href="https://github.com/apanly/mooc/tree/master/vagrant" target="_blank" rel="noopener">慕课网教学视频对应 GitHub</a></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;http://www.vagrantbox.es/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;- vagrant box 下载地址&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;vagrant box add    添加box的操作&lt;/li&gt;
-&lt;
+        &lt;h2 id=&quot;版本选择&quot;&gt;&lt;a href=&quot;#版本选择&quot; class=&quot;headerlink&quot; title=&quot;版本选择&quot;&gt;&lt;/a&gt;版本选择&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;Vagrant 和 VirtualBox 的版本需要对应好，否则 Vagrant 可能会无法操作Virtua
       
     
     </summary>
