@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huangwenren.github.io/"/>
-  <updated>2018-08-28T13:22:49.780Z</updated>
+  <updated>2018-08-28T14:13:37.383Z</updated>
   <id>https://huangwenren.github.io/</id>
   
   <author>
@@ -17,13 +17,76 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Node.js入门</title>
+    <link href="https://huangwenren.github.io/2018/08/28/NodeJS%E5%85%A5%E9%97%A8/"/>
+    <id>https://huangwenren.github.io/2018/08/28/NodeJS入门/</id>
+    <published>2018-08-28T14:12:11.000Z</published>
+    <updated>2018-08-28T14:13:37.383Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h2><p>‘</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;安装-Node-js&quot;&gt;&lt;a href=&quot;#安装-Node-js&quot; class=&quot;headerlink&quot; title=&quot;安装 Node.js&quot;&gt;&lt;/a&gt;安装 Node.js&lt;/h2&gt;&lt;p&gt;‘&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Node.js" scheme="https://huangwenren.github.io/categories/Node-js/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ES入门</title>
+    <link href="https://huangwenren.github.io/2018/08/28/ES%E5%85%A5%E9%97%A8/"/>
+    <id>https://huangwenren.github.io/2018/08/28/ES入门/</id>
+    <published>2018-08-28T13:45:03.000Z</published>
+    <updated>2018-08-28T13:46:38.953Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Elasticsearch" scheme="https://huangwenren.github.io/categories/Elasticsearch/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx反向代理</title>
+    <link href="https://huangwenren.github.io/2018/08/28/Nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
+    <id>https://huangwenren.github.io/2018/08/28/Nginx反向代理/</id>
+    <published>2018-08-28T13:37:29.000Z</published>
+    <updated>2018-08-28T13:42:42.100Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">map <span class="variable">$http_upgrade</span> <span class="variable">$connection_upgrade</span> &#123;</span><br><span class="line">    default upgrade;</span><br><span class="line">    <span class="string">''</span>  close;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改Nginx的配置文件（具体配置文件的路径，参照Nginx的安装路径。在10.19.49.64这台物理机上，nginx安装在/usr/local/nginx）</span></span><br><span class="line">vim /usr/<span class="built_in">local</span>/nginx/conf/nginx.conf</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 在nginx.conf中添加如下内容：</span></span><br><span class="line"> </span><br><span class="line">        location /<span class="variable">$&#123;cluster&#125;</span>/<span class="variable">$&#123;keytab&#125;</span>/ &#123;</span><br><span class="line">            proxy_pass  http://<span class="variable">$&#123;ip&#125;</span>:<span class="variable">$&#123;port&#125;</span>/;</span><br><span class="line">            proxy_http_version 1.1;</span><br><span class="line">            proxy_set_header Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line">            proxy_set_header Connection <span class="variable">$connection_upgrade</span>;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=
+      
+    
+    </summary>
+    
+      <category term="Nginx" scheme="https://huangwenren.github.io/categories/Nginx/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Linux中增加swap空间</title>
     <link href="https://huangwenren.github.io/2018/08/28/Linux%E4%B8%AD%E5%A2%9E%E5%8A%A0swap%E7%A9%BA%E9%97%B4/"/>
     <id>https://huangwenren.github.io/2018/08/28/Linux中增加swap空间/</id>
     <published>2018-08-28T02:53:58.000Z</published>
-    <updated>2018-08-28T13:22:49.780Z</updated>
+    <updated>2018-08-28T14:07:04.856Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>对于 memory 没什么可说的就是机器的物理内存，读写速度低于 cpu 一个量级，但是高于磁盘不止一个量级。所以，程序和数据如果在内存的话，会有非常快的读写速度。但是，内存的造价是要高于磁盘的，虽然相对来说价格一直在降低。除此之外，内存的断电丢失数据也是一个原因说不能把所有数据和程序都保存在内存中。既然不能全部使用内存，那数据还有程序肯定不可能一直霸占在内存中。当内存没有可用的，就必须要把内存中不经常运行的程序给踢出去。但是踢到哪里去，这时候 swap 就出现了。swap 全称为 swap place，，即交换区，当内存不够的时候，被踢出的进程被暂时存储到交换区。当需要这条被踢出的进程的时候，就从交换区重新加载到内存，否则它不会主动交换到真是内存中。</p><p>在安装 Linux 的时候，不知道 swap 空间分配多少比较好，所以会随便分配一个。在真正使用的时候，比如安装 Oracle10g 会要求很大的 swap 空间，发现 swap 空间不够，那应该怎么增加 swap 空间大小呢。</p><h2 id="查看原-swap-分区大小"><a href="#查看原-swap-分区大小" class="headerlink" title="查看原 swap 分区大小"></a>查看原 swap 分区大小</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free m</span><br></pre></td></tr></table></figure><h2 id="建立一个分区"><a href="#建立一个分区" class="headerlink" title="建立一个分区"></a>建立一个分区</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd <span class="keyword">if</span>=/dev/zero of=/home/swap bs=1024 count=512000</span><br></pre></td></tr></table></figure><p>这样就会创建 /home/swap 这么一个分区文件。文件的大小是 512000 个 block，一般情况下 1 个 block 为 1K，所以这里空间是 512M。</p><h2 id="将分区变成-swap-分区"><a href="#将分区变成-swap-分区" class="headerlink" title="将分区变成 swap 分区"></a>将分区变成 swap 分区</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/mkswap /home/swap</span><br></pre></td></tr></table></figure><h1 id="使用这个-swap-分区-使其成为有效状态"><a href="#使用这个-swap-分区-使其成为有效状态" class="headerlink" title="使用这个 swap 分区,使其成为有效状态"></a>使用这个 swap 分区,使其成为有效状态</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/swapon /home/swap</span><br></pre></td></tr></table></figure><h2 id="查看当前内存和-swap-分区大小"><a href="#查看当前内存和-swap-分区大小" class="headerlink" title="查看当前内存和 swap 分区大小"></a>查看当前内存和 swap 分区大小</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free m</span><br></pre></td></tr></table></figure><p>可以发现增加了 512M 的空间了。不过当计算机重启了以后，发现 swap 还是原来那么大，新的 swap 没有自动启动，还要手动启动。那我们需要修改 /etc/fstab 文件，增加如下一行:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/swap swap swap defaults 0 0</span><br></pre></td></tr></table></figure><p>这样一来，机器就算重新启动，swap 空间也会自动增大。</p><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://blog.csdn.net/zwan0518/article/details/12059213" target="_blank" rel="noopener">Linux中Swap与Memory内存简单介绍</a><br><a href="https://blog.csdn.net/zhang123456456/article/details/78055059" target="_blank" rel="noopener">Linux之增加swap空间</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>对于 memory 没什么可说的就是机器的物理内存，读写速度低于 cpu 一个量级，但是高于磁盘不止一个量级。所以，程序和数据如果在内存的话，会有非常快的读写速度。但是，内存的造价是要高于磁盘的，虽然相对来说价格一直在降低。除此之外，内存的断电丢失数据也是一个原因说不能把所有数据和程序都保存在内存中。既然不能全部使用内存，那数据还有程序肯定不可能一直霸占在内存中。当内存没有可用的，就必须要把内存中不经常运行的程序给踢出去。但是踢到哪里去，这时候 swap 就出现了。swap 全称为 swap place，，即交换区，当内存不够的时候，被踢出的进程被暂时存储到交换区。当需要这条被踢出的进程的时候，就从交换区重新加载到内存，否则它不会主动交换到真是内存中。</p><p>在安装 Linux 的时候，不知道 swap 空间分配多少比较好，所以会随便分配一个。在真正使用的时候，比如安装 Oracle10g 会要求很大的 swap 空间，发现 swap 空间不够，那应该怎么增加 swap 空间大小呢。</p><h2 id="查看原-swap-分区大小"><a href="#查看原-swap-分区大小" class="headerlink" title="查看原 swap 分区大小"></a>查看原 swap 分区大小</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free m</span><br></pre></td></tr></table></figure><h2 id="建立一个分区"><a href="#建立一个分区" class="headerlink" title="建立一个分区"></a>建立一个分区</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd <span class="keyword">if</span>=/dev/zero of=/home/swap bs=1024 count=512000</span><br></pre></td></tr></table></figure><p>这样就会创建 /home/swap 这么一个分区文件。文件的大小是 512000 个 block，一般情况下 1 个 block 为 1K，所以这里空间是 512M。</p><h2 id="将分区变成-swap-分区"><a href="#将分区变成-swap-分区" class="headerlink" title="将分区变成 swap 分区"></a>将分区变成 swap 分区</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/mkswap /home/swap</span><br></pre></td></tr></table></figure><h2 id="使用这个-swap-分区-使其成为有效状态"><a href="#使用这个-swap-分区-使其成为有效状态" class="headerlink" title="使用这个 swap 分区,使其成为有效状态"></a>使用这个 swap 分区,使其成为有效状态</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/swapon /home/swap</span><br></pre></td></tr></table></figure><h2 id="查看当前内存和-swap-分区大小"><a href="#查看当前内存和-swap-分区大小" class="headerlink" title="查看当前内存和 swap 分区大小"></a>查看当前内存和 swap 分区大小</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free m</span><br></pre></td></tr></table></figure><p>可以发现增加了 512M 的空间了。不过当计算机重启了以后，发现 swap 还是原来那么大，新的 swap 没有自动启动，还要手动启动。那我们需要修改 /etc/fstab 文件，增加如下一行:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/swap swap swap defaults 0 0</span><br></pre></td></tr></table></figure><p>这样一来，机器就算重新启动，swap 空间也会自动增大。</p><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://blog.csdn.net/zwan0518/article/details/12059213" target="_blank" rel="noopener">Linux中Swap与Memory内存简单介绍</a><br><a href="https://blog.csdn.net/zhang123456456/article/details/78055059" target="_blank" rel="noopener">Linux之增加swap空间</a></p>]]></content>
     
     <summary type="html">
     
@@ -96,16 +159,15 @@
     <link href="https://huangwenren.github.io/2018/08/23/first-network%E6%B5%8B%E8%AF%95/"/>
     <id>https://huangwenren.github.io/2018/08/23/first-network测试/</id>
     <published>2018-08-23T09:34:02.052Z</published>
-    <updated>2018-08-27T03:57:09.294Z</updated>
+    <updated>2018-08-28T14:10:53.680Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html" target="_blank" rel="noopener">参照官方文档</a></p><h2 id="下载-fabric-sample-代码"><a href="#下载-fabric-sample-代码" class="headerlink" title="下载 fabric-sample 代码"></a>下载 fabric-sample 代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/hyperledger/fabric-samples.git</span><br></pre></td></tr></table></figure><h2 id="进入-fabric-sample-目录"><a href="#进入-fabric-sample-目录" class="headerlink" title="进入 fabric-sample 目录"></a>进入 fabric-sample 目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> fabric-samples/first-network</span><br></pre></td></tr></table></figure><h2 id="下载二进制文件，需指定当前-fabric-sample-的版本"><a href="#下载二进制文件，需指定当前-fabric-sample-的版本" class="headerlink" title="下载二进制文件，需指定当前 fabric-sample 的版本"></a>下载二进制文件，需指定当前 fabric-sample 的版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://goo.gl/6wtTN5 | bash -s <span class="variable">$&#123;VERSION&#125;</span></span><br></pre></td></tr></table></figure><h2 id="生成网络构件"><a href="#生成网络构件" class="headerlink" title="生成网络构件"></a>生成网络构件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./byfn.sh generate</span><br></pre></td></tr></table></figure><h2 id="启动网络"><a href="#启动网络" class="headerlink" title="启动网络"></a>启动网络</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./byfn.sh up</span><br></pre></td></tr></table></figure><h2 id="关闭网络"><a href="#关闭网络" class="headerlink" title="关闭网络"></a>关闭网络</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./byfn.sh down</span><br></pre></td></tr></table></figure><p><a href="https://stackoverflow.com/questions/48151804/error-got-unexpected-status-forbidden-failed-to-reach-implicit-threshold-of?rq=1" target="_blank" rel="noopener">https://stackoverflow.com/questions/48151804/error-got-unexpected-status-forbidden-failed-to-reach-implicit-threshold-of?rq=1</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="下载-fabric-sample-代码"><a href="#下载-fabric-sample-代码" class="headerlink" title="下载 fabric-sample 代码"></a>下载 fabric-sample 代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/hyperledger/fabric-samples.git</span><br></pre></td></tr></table></figure><h2 id="进入-fabric-sample-目录"><a href="#进入-fabric-sample-目录" class="headerlink" title="进入 fabric-sample 目录"></a>进入 fabric-sample 目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> fabric-samples</span><br></pre></td></tr></table></figure><h2 id="下载二进制文件，需指定当前-fabric-sample-的版本"><a href="#下载二进制文件，需指定当前-fabric-sample-的版本" class="headerlink" title="下载二进制文件，需指定当前 fabric-sample 的版本"></a>下载二进制文件，需指定当前 fabric-sample 的版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://goo.gl/6wtTN5 | bash -s <span class="variable">$&#123;VERSION&#125;</span></span><br></pre></td></tr></table></figure><p>最近发现了一个<strong>速度更快的方法</strong>。<br>这个脚本文件其实在 fabric 中就已经存在了，直接利用 fabric 中的脚本也可以得到与上面命令一样的效果，具体如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cp <span class="variable">$GOPATH</span>/src/github.com/hyperledger/fabric/scripts/bootstrap.sh ./</span><br><span class="line"></span><br><span class="line">chmod +x bootstrap.sh</span><br><span class="line"></span><br><span class="line">./bootstrap.sh</span><br></pre></td></tr></table></figure><h2 id="进入-first-network-目录"><a href="#进入-first-network-目录" class="headerlink" title="进入 first-network 目录"></a>进入 first-network 目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> first-network</span><br></pre></td></tr></table></figure><h2 id="生成网络构件"><a href="#生成网络构件" class="headerlink" title="生成网络构件"></a>生成网络构件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./byfn.sh generate</span><br></pre></td></tr></table></figure><h2 id="启动网络"><a href="#启动网络" class="headerlink" title="启动网络"></a>启动网络</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./byfn.sh up</span><br></pre></td></tr></table></figure><h2 id="关闭网络"><a href="#关闭网络" class="headerlink" title="关闭网络"></a>关闭网络</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./byfn.sh down</span><br></pre></td></tr></table></figure><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html" target="_blank" rel="noopener">官方文档</a><br><a href="https://hyperledger-fabric.readthedocs.io/en/latest/install.html" target="_blank" rel="noopener">安装二进制文件</a><br><a href="https://blog.csdn.net/mellymengyan/article/details/77671185" target="_blank" rel="noopener">cryptogen tool not found. exiting错误解决办法</a></p><h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ul><li>没有 down 网络，导致 up 网络失败。解决方法：先 down 网络，然后再 up <a href="https://stackoverflow.com/questions/48151804/error-got-unexpected-status-forbidden-failed-to-reach-implicit-threshold-of?rq=1" target="_blank" rel="noopener">详情可参照这个 stack overflow</a></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;https://hyperledger-fabric.readthedocs.io/en/latest/build_network.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;参照官方文档&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;下载
+        &lt;h2 id=&quot;下载-fabric-sample-代码&quot;&gt;&lt;a href=&quot;#下载-fabric-sample-代码&quot; class=&quot;headerlink&quot; title=&quot;下载 fabric-sample 代码&quot;&gt;&lt;/a&gt;下载 fabric-sample 代码&lt;/h2&gt;&lt;figu
       
     
     </summary>
@@ -143,15 +205,15 @@
     <link href="https://huangwenren.github.io/2018/08/22/docker%E5%85%A5%E9%97%A8/"/>
     <id>https://huangwenren.github.io/2018/08/22/docker入门/</id>
     <published>2018-08-22T08:54:03.000Z</published>
-    <updated>2018-08-22T09:00:23.503Z</updated>
+    <updated>2018-08-28T13:43:53.593Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="删除所有容器"><a href="#删除所有容器" class="headerlink" title="删除所有容器"></a>删除所有容器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f $(docker ps -aq)</span><br></pre></td></tr></table></figure><h2 id="删除所有镜像"><a href="#删除所有镜像" class="headerlink" title="删除所有镜像"></a>删除所有镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f $(docker images -aq)</span><br></pre></td></tr></table></figure><h2 id="容器中查看-Linux-版本"><a href="#容器中查看-Linux-版本" class="headerlink" title="容器中查看 Linux 版本"></a>容器中查看 Linux 版本</h2><p>正确的姿势：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/issue</span><br></pre></td></tr></table></figure></p><p>错误的姿势：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/version </span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">uname -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上诉两个方法查到的是宿主机的系统</span></span><br></pre></td></tr></table></figure></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h2><h2 id="删除所有容器"><a href="#删除所有容器" class="headerlink" title="删除所有容器"></a>删除所有容器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f $(docker ps -aq)</span><br></pre></td></tr></table></figure><h2 id="删除所有镜像"><a href="#删除所有镜像" class="headerlink" title="删除所有镜像"></a>删除所有镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f $(docker images -aq)</span><br></pre></td></tr></table></figure><h2 id="容器中查看-Linux-版本"><a href="#容器中查看-Linux-版本" class="headerlink" title="容器中查看 Linux 版本"></a>容器中查看 Linux 版本</h2><p>正确的姿势：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/issue</span><br></pre></td></tr></table></figure></p><p>错误的姿势：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/version </span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">uname -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上诉两个方法查到的是宿主机的系统</span></span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;删除所有容器&quot;&gt;&lt;a href=&quot;#删除所有容器&quot; class=&quot;headerlink&quot; title=&quot;删除所有容器&quot;&gt;&lt;/a&gt;删除所有容器&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
+        &lt;h2 id=&quot;安装-Docker&quot;&gt;&lt;a href=&quot;#安装-Docker&quot; class=&quot;headerlink&quot; title=&quot;安装 Docker&quot;&gt;&lt;/a&gt;安装 Docker&lt;/h2&gt;&lt;h2 id=&quot;删除所有容器&quot;&gt;&lt;a href=&quot;#删除所有容器&quot; class=&quot;head
       
     
     </summary>
@@ -166,15 +228,15 @@
     <link href="https://huangwenren.github.io/2018/08/21/Hexo%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/"/>
     <id>https://huangwenren.github.io/2018/08/21/Hexo中使用本地图片/</id>
     <published>2018-08-21T08:16:20.000Z</published>
-    <updated>2018-08-28T02:47:11.012Z</updated>
+    <updated>2018-08-28T13:34:15.206Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="http://wonder4.me/2017/02/20/Using-Local-Image-in-Hexo/" target="_blank" rel="noopener">参考文章</a><br><img src="/2018/08/21/Hexo中使用本地图片/nasa.jpg" alt=""></p><p><a href="https://theme-next.iissnan.com/getting-started.html#install-next-theme" target="_blank" rel="noopener">Next主题文档</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="修改站点配置文件"><a href="#修改站点配置文件" class="headerlink" title="修改站点配置文件"></a>修改站点配置文件</h2><p>在全局的 _config.yml 中设置 post_asset_folder 属性为 true</p><h2 id="安装-node-模块"><a href="#安装-node-模块" class="headerlink" title="安装 node 模块"></a>安装 node 模块</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span><br></pre></td></tr></table></figure><h2 id="创建文章"><a href="#创建文章" class="headerlink" title="创建文章"></a>创建文章</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n post <span class="string">"Using Local Image in Hexo"</span></span><br></pre></td></tr></table></figure><p>_post 目录下会生成与 .md 文件同名的目录，将图片 nasa.jpg 拷贝到目录下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── Using-Local-Image-in-Hexo</span><br><span class="line">│   └── nasa.jpg</span><br><span class="line">└── Using-Local-Image-in-Hexo.md</span><br></pre></td></tr></table></figure><h2 id="使用图片"><a href="#使用图片" class="headerlink" title="使用图片"></a>使用图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![nasa](Using-Local-Image-in-Hexo/nasa.jpg)</span><br></pre></td></tr></table></figure><h2 id="具体效果"><a href="#具体效果" class="headerlink" title="具体效果"></a>具体效果</h2><p><img src="/2018/08/21/Hexo中使用本地图片/nasa.jpg" alt="nasa"> </p><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="http://wonder4.me/2017/02/20/Using-Local-Image-in-Hexo/" target="_blank" rel="noopener">在 Hexo 中使用本地图片</a></p><p><a href="https://theme-next.iissnan.com/getting-started.html#install-next-theme" target="_blank" rel="noopener">Next主题文档</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;http://wonder4.me/2017/02/20/Using-Local-Image-in-Hexo/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;参考文章&lt;/a&gt;&lt;br&gt;&lt;img src=&quot;/2018/08/21/Hexo中使
+        &lt;h2 id=&quot;修改站点配置文件&quot;&gt;&lt;a href=&quot;#修改站点配置文件&quot; class=&quot;headerlink&quot; title=&quot;修改站点配置文件&quot;&gt;&lt;/a&gt;修改站点配置文件&lt;/h2&gt;&lt;p&gt;在全局的 _config.yml 中设置 post_asset_folder 属性为 tru
       
     
     </summary>
@@ -210,9 +272,9 @@
     <link href="https://huangwenren.github.io/2018/08/21/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>https://huangwenren.github.io/2018/08/21/Linux常用命令/</id>
     <published>2018-08-21T07:49:22.000Z</published>
-    <updated>2018-08-28T02:45:56.083Z</updated>
+    <updated>2018-08-28T13:55:01.888Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 遍历文件夹查找文本内容</span></span><br><span class="line">grep -r <span class="string">"查找文本内容"</span> *</span><br></pre></td></tr></table></figure><h1 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h1><ul><li>全局替换  %s/{old}/{new}/g</li></ul><h1 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h1><h1 id="ssh-copy-id"><a href="#ssh-copy-id" class="headerlink" title="ssh-copy-id"></a>ssh-copy-id</h1><h1 id="find"><a href="#find" class="headerlink" title="find"></a>find</h1><p># </p>]]></content>
+    <content type="html"><![CDATA[<h1 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 遍历文件夹查找文本内容</span></span><br><span class="line">grep -r <span class="string">"查找文本内容"</span> *</span><br></pre></td></tr></table></figure><h1 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h1><ul><li>全局替换  %s/{old}/{new}/g</li></ul><h1 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h1><h1 id="ssh-copy-id"><a href="#ssh-copy-id" class="headerlink" title="ssh-copy-id"></a>ssh-copy-id</h1><h1 id="find"><a href="#find" class="headerlink" title="find"></a>find</h1><h1 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h1><p># </p>]]></content>
     
     <summary type="html">
     
