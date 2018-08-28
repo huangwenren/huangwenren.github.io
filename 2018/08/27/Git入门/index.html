@@ -96,17 +96,17 @@
 
 
 
-<meta name="description" content="yum -y upgrade 和 yum -y update参考该博客 升级前 updateIf  run  without any packages, update will update every currently installed package.   If one or more packages or package globs are specified, Yum will on">
+<meta name="description" content="黄文仁的个人博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux常用命令">
-<meta property="og:url" content="https://huangwenren.github.io/2018/08/23/Linux常用命令/index.html">
+<meta property="og:title" content="Git入门">
+<meta property="og:url" content="https://huangwenren.github.io/2018/08/27/Git入门/index.html">
 <meta property="og:site_name" content="Wenren&#39;s World">
-<meta property="og:description" content="yum -y upgrade 和 yum -y update参考该博客 升级前 updateIf  run  without any packages, update will update every currently installed package.   If one or more packages or package globs are specified, Yum will on">
+<meta property="og:description" content="黄文仁的个人博客">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-26T12:43:27.681Z">
+<meta property="og:updated_time" content="2018-08-27T15:04:37.987Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux常用命令">
-<meta name="twitter:description" content="yum -y upgrade 和 yum -y update参考该博客 升级前 updateIf  run  without any packages, update will update every currently installed package.   If one or more packages or package globs are specified, Yum will on">
+<meta name="twitter:title" content="Git入门">
+<meta name="twitter:description" content="黄文仁的个人博客">
 
 
 
@@ -136,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://huangwenren.github.io/2018/08/23/Linux常用命令/"/>
+  <link rel="canonical" href="https://huangwenren.github.io/2018/08/27/Git入门/"/>
 
 
 
 
 
-  <title>Linux常用命令 | Wenren's World</title>
+  <title>Git入门 | Wenren's World</title>
   
 
 
@@ -269,7 +269,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://huangwenren.github.io/2018/08/23/Linux常用命令/">
+    <link itemprop="mainEntityOfPage" href="https://huangwenren.github.io/2018/08/27/Git入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="huangwenren">
@@ -286,7 +286,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Linux常用命令</h2>
+          <h2 class="post-title" itemprop="name headline">Git入门</h2>
         
 
         <div class="post-meta">
@@ -298,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-23T17:46:29+08:00">
-                2018-08-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-27T23:04:22+08:00">
+                2018-08-27
               </time>
             
 
@@ -321,8 +321,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
                   </a>
                 </span>
 
@@ -338,7 +338,7 @@
 
           
           
-             <span id="/2018/08/23/Linux常用命令/" class="leancloud_visitors" data-flag-title="Linux常用命令">
+             <span id="/2018/08/27/Git入门/" class="leancloud_visitors" data-flag-title="Git入门">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -369,20 +369,7 @@
       
 
       
-        <h2 id="yum-y-upgrade-和-yum-y-update"><a href="#yum-y-upgrade-和-yum-y-update" class="headerlink" title="yum -y upgrade 和 yum -y update"></a>yum -y upgrade 和 yum -y update</h2><p><a href="https://www.jianshu.com/p/4df7692bdc2b" target="_blank" rel="noopener">参考该博客</a></p>
-<p>升级前</p>
-<p>update<br>If  run  without any packages, update will update every currently installed package.  </p>
-<p>If one or more packages or package globs are specified, Yum will only update the listed packages.  </p>
-<p>While updating packages, yum will ensure that all dependencies are satisfied. (See Specifying package names for more  information)  </p>
-<p>If the packages or globs specified match to packages which are not currently installed then update will not install them. update operates on groups, files, provides and filelists just like the “install” command.</p>
-<p>If the main obsoletes configure option is true (default) or the –obsoletes flag is present yum will include package obsoletes in its calculations  -  this<br>makes it better for distro-version changes, for example: upgrading from somelinux 8.0 to somelinux 9.</p>
-<p>Note  that “update” works on installed packages first, and only if there are no matches does it look for available packages. The difference is most notice‐able<br>when you do “update foo-1-2” which will act exactly as “update foo” if foo-1-2 is installed. You can use the “update-to” if you’d prefer that  nothing<br>happen in the above case.</p>
-<p>upgrade<br>Is the same as the update command with the –obsoletes flag set. See update for more details.</p>
-<p>首先, <code>yum update</code> 和 <code>yum upgrade</code> 的功能是一样的，都是将需要更新的 package 更新至软件源中的最新版。</p>
-<p>唯一不同是：<code>yum upgrade</code>  会删除旧版本的 package ，而 <code>yum update</code> 则会保留。</p>
-<p>注意！如果你的某些软件依赖旧版本的 package，请使用 <code>yum update</code></p>
-<h1 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h1><p>sed %s/${old}/${new}/g<br>sed </p>
-
+        
       
     </div>
     
@@ -430,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/23/first-network测试/" rel="next" title="first-network测试">
-                <i class="fa fa-chevron-left"></i> first-network测试
+              <a href="/2018/08/27/TopK问题/" rel="next" title="Top K问题">
+                <i class="fa fa-chevron-left"></i> Top K问题
               </a>
             
           </div>
@@ -440,8 +427,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/26/Hexo文章摘要/" rel="prev" title="Hexo文章摘要">
-                Hexo文章摘要 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/28/Linux中增加swap空间/" rel="prev" title="Linux中增加swap空间">
+                Linux中增加swap空间 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -496,17 +483,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -523,7 +501,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -614,22 +592,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#yum-y-upgrade-和-yum-y-update"><span class="nav-number">1.</span> <span class="nav-text">yum -y upgrade 和 yum -y update</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sed"><span class="nav-number"></span> <span class="nav-text">sed</span></a></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

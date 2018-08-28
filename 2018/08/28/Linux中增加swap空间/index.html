@@ -96,16 +96,17 @@
 
 
 
-<meta name="description" content="黄文仁的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Wenren&#39;s World">
-<meta property="og:url" content="https://huangwenren.github.io/categories/Shell/index.html">
+<meta name="description" content="背景对于 memory 没什么可说的就是机器的物理内存，读写速度低于 cpu 一个量级，但是高于磁盘不止一个量级。所以，程序和数据如果在内存的话，会有非常快的读写速度。但是，内存的造价是要高于磁盘的，虽然相对来说价格一直在降低。除此之外，内存的断电丢失数据也是一个原因说不能把所有数据和程序都保存在内存中。既然不能全部使用内存，那数据还有程序肯定不可能一直霸占在内存中。当内存没有可用的，就必须要把内">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux中增加swap空间">
+<meta property="og:url" content="https://huangwenren.github.io/2018/08/28/Linux中增加swap空间/index.html">
 <meta property="og:site_name" content="Wenren&#39;s World">
-<meta property="og:description" content="黄文仁的个人博客">
+<meta property="og:description" content="背景对于 memory 没什么可说的就是机器的物理内存，读写速度低于 cpu 一个量级，但是高于磁盘不止一个量级。所以，程序和数据如果在内存的话，会有非常快的读写速度。但是，内存的造价是要高于磁盘的，虽然相对来说价格一直在降低。除此之外，内存的断电丢失数据也是一个原因说不能把所有数据和程序都保存在内存中。既然不能全部使用内存，那数据还有程序肯定不可能一直霸占在内存中。当内存没有可用的，就必须要把内">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-28T13:19:10.331Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wenren&#39;s World">
-<meta name="twitter:description" content="黄文仁的个人博客">
+<meta name="twitter:title" content="Linux中增加swap空间">
+<meta name="twitter:description" content="背景对于 memory 没什么可说的就是机器的物理内存，读写速度低于 cpu 一个量级，但是高于磁盘不止一个量级。所以，程序和数据如果在内存的话，会有非常快的读写速度。但是，内存的造价是要高于磁盘的，虽然相对来说价格一直在降低。除此之外，内存的断电丢失数据也是一个原因说不能把所有数据和程序都保存在内存中。既然不能全部使用内存，那数据还有程序肯定不可能一直霸占在内存中。当内存没有可用的，就必须要把内">
 
 
 
@@ -135,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://huangwenren.github.io/categories/Shell/"/>
+  <link rel="canonical" href="https://huangwenren.github.io/2018/08/28/Linux中增加swap空间/"/>
 
 
 
 
 
-  <title>分类: Shell | Wenren's World</title>
+  <title>Linux中增加swap空间 | Wenren's World</title>
   
 
 
@@ -160,7 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -254,55 +255,209 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>Shell<small>分类</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huangwenren.github.io/2018/08/28/Linux中增加swap空间/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="huangwenren">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wenren's World">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/08/21/Shell入门/" itemprop="url">
-              
-                <span itemprop="name">Shell入门</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">Linux中增加swap空间</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-21T15:49:22+08:00"
-              content="2018-08-21" >
-          08-21
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-28T10:53:58+08:00">
+                2018-08-28
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/28/Linux中增加swap空间/" class="leancloud_visitors" data-flag-title="Linux中增加swap空间">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>对于 memory 没什么可说的就是机器的物理内存，读写速度低于 cpu 一个量级，但是高于磁盘不止一个量级。所以，程序和数据如果在内存的话，会有非常快的读写速度。但是，内存的造价是要高于磁盘的，虽然相对来说价格一直在降低。除此之外，内存的断电丢失数据也是一个原因说不能把所有数据和程序都保存在内存中。既然不能全部使用内存，那数据还有程序肯定不可能一直霸占在内存中。当内存没有可用的，就必须要把内存中不经常运行的程序给踢出去。但是踢到哪里去，这时候 swap 就出现了。swap 全称为 swap place，，即交换区，当内存不够的时候，被踢出的进程被暂时存储到交换区。当需要这条被踢出的进程的时候，就从交换区重新加载到内存，否则它不会主动交换到真是内存中。</p>
+<p>在安装 Linux 的时候，不知道 swap 空间分配多少比较好，所以会随便分配一个。在真正使用的时候，比如安装 Oracle10g 会要求很大的 swap 空间，发现 swap 空间不够，那应该怎么增加 swap 空间大小呢。</p>
+<h2 id="查看原-swap-分区大小"><a href="#查看原-swap-分区大小" class="headerlink" title="查看原 swap 分区大小"></a>查看原 swap 分区大小</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free m</span><br></pre></td></tr></table></figure>
+<h2 id="建立一个分区"><a href="#建立一个分区" class="headerlink" title="建立一个分区"></a>建立一个分区</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd <span class="keyword">if</span>=/dev/zero of=/home/swap bs=1024 count=512000</span><br></pre></td></tr></table></figure>
+<p>这样就会创建 /home/swap 这么一个分区文件。文件的大小是 512000 个 block，一般情况下 1 个 block 为 1K，所以这里空间是 512M。</p>
+<h2 id="将分区变成-swap-分区"><a href="#将分区变成-swap-分区" class="headerlink" title="将分区变成 swap 分区"></a>将分区变成 swap 分区</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/mkswap /home/swap</span><br></pre></td></tr></table></figure>
+<h1 id="使用这个-swap-分区-使其成为有效状态"><a href="#使用这个-swap-分区-使其成为有效状态" class="headerlink" title="使用这个 swap 分区,使其成为有效状态"></a>使用这个 swap 分区,使其成为有效状态</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/sbin/swapon /home/swap</span><br></pre></td></tr></table></figure>
+<h2 id="查看当前内存和-swap-分区大小"><a href="#查看当前内存和-swap-分区大小" class="headerlink" title="查看当前内存和 swap 分区大小"></a>查看当前内存和 swap 分区大小</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free m</span><br></pre></td></tr></table></figure>
+<p>可以发现增加了 512M 的空间了。不过当计算机重启了以后，发现 swap 还是原来那么大，新的 swap 没有自动启动，还要手动启动。那我们需要修改 /etc/fstab 文件，增加如下一行:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/swap swap swap defaults 0 0</span><br></pre></td></tr></table></figure>
+<p>这样一来，机器就算重新启动，swap 空间也会自动增大。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://blog.csdn.net/zwan0518/article/details/12059213" target="_blank" rel="noopener">Linux中Swap与Memory内存简单介绍</a><br><a href="https://blog.csdn.net/zhang123456456/article/details/78055059" target="_blank" rel="noopener">Linux之 增加swap空间</a></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="huangwenren WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/27/Git入门/" rel="next" title="Git入门">
+                <i class="fa fa-chevron-left"></i> Git入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -310,6 +465,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="vcomments"></div>
+    
+  </div>
+
 
         </div>
         
@@ -330,8 +491,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -348,7 +518,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -439,6 +609,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看原-swap-分区大小"><span class="nav-number">2.</span> <span class="nav-text">查看原 swap 分区大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立一个分区"><span class="nav-number">3.</span> <span class="nav-text">建立一个分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将分区变成-swap-分区"><span class="nav-number">4.</span> <span class="nav-text">将分区变成 swap 分区</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用这个-swap-分区-使其成为有效状态"><span class="nav-number"></span> <span class="nav-text">使用这个 swap 分区,使其成为有效状态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看当前内存和-swap-分区大小"><span class="nav-number">1.</span> <span class="nav-text">查看当前内存和 swap 分区大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">2.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -556,10 +742,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
