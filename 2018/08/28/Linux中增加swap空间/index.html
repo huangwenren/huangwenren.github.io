@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Wenren&#39;s World">
 <meta property="og:description" content="背景对于 memory 没什么可说的就是机器的物理内存，读写速度低于 cpu 一个量级，但是高于磁盘不止一个量级。所以，程序和数据如果在内存的话，会有非常快的读写速度。但是，内存的造价是要高于磁盘的，虽然相对来说价格一直在降低。除此之外，内存的断电丢失数据也是一个原因说不能把所有数据和程序都保存在内存中。既然不能全部使用内存，那数据还有程序肯定不可能一直霸占在内存中。当内存没有可用的，就必须要把内">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-28T13:19:10.331Z">
+<meta property="og:updated_time" content="2018-08-28T13:22:49.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux中增加swap空间">
 <meta name="twitter:description" content="背景对于 memory 没什么可说的就是机器的物理内存，读写速度低于 cpu 一个量级，但是高于磁盘不止一个量级。所以，程序和数据如果在内存的话，会有非常快的读写速度。但是，内存的造价是要高于磁盘的，虽然相对来说价格一直在降低。除此之外，内存的断电丢失数据也是一个原因说不能把所有数据和程序都保存在内存中。既然不能全部使用内存，那数据还有程序肯定不可能一直霸占在内存中。当内存没有可用的，就必须要把内">
@@ -380,7 +380,7 @@
 <p>可以发现增加了 512M 的空间了。不过当计算机重启了以后，发现 swap 还是原来那么大，新的 swap 没有自动启动，还要手动启动。那我们需要修改 /etc/fstab 文件，增加如下一行:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/swap swap swap defaults 0 0</span><br></pre></td></tr></table></figure>
 <p>这样一来，机器就算重新启动，swap 空间也会自动增大。</p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://blog.csdn.net/zwan0518/article/details/12059213" target="_blank" rel="noopener">Linux中Swap与Memory内存简单介绍</a><br><a href="https://blog.csdn.net/zhang123456456/article/details/78055059" target="_blank" rel="noopener">Linux之 增加swap空间</a></p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://blog.csdn.net/zwan0518/article/details/12059213" target="_blank" rel="noopener">Linux中Swap与Memory内存简单介绍</a><br><a href="https://blog.csdn.net/zhang123456456/article/details/78055059" target="_blank" rel="noopener">Linux之增加swap空间</a></p>
 
       
     </div>
