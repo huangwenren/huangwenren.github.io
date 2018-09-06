@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://huangwenren.github.io/"/>
-  <updated>2018-08-28T14:13:37.383Z</updated>
+  <updated>2018-09-06T14:42:47.014Z</updated>
   <id>https://huangwenren.github.io/</id>
   
   <author>
@@ -17,25 +17,180 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Node.js入门</title>
-    <link href="https://huangwenren.github.io/2018/08/28/NodeJS%E5%85%A5%E9%97%A8/"/>
-    <id>https://huangwenren.github.io/2018/08/28/NodeJS入门/</id>
-    <published>2018-08-28T14:12:11.000Z</published>
-    <updated>2018-08-28T14:13:37.383Z</updated>
+    <title>Shell编程</title>
+    <link href="https://huangwenren.github.io/2018/09/06/Shell%E7%BC%96%E7%A8%8B/"/>
+    <id>https://huangwenren.github.io/2018/09/06/Shell编程/</id>
+    <published>2018-09-06T13:07:31.000Z</published>
+    <updated>2018-09-06T14:42:47.014Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h2><p>‘</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="设置默认值"><a href="#设置默认值" class="headerlink" title="设置默认值"></a>设置默认值</h2><ul><li>变量为 null 时，则 var=b</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash  </span></span><br><span class="line">var=<span class="variable">$&#123;a-b&#125;</span></span><br></pre></td></tr></table></figure><ul><li>变量为 null 且为空字符串，则 var=b</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash  </span></span><br><span class="line">var=<span class="variable">$&#123;a:-b&#125;</span></span><br></pre></td></tr></table></figure><ul><li>附：简单但不优雅的实现方式</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash  </span></span><br><span class="line"><span class="keyword">if</span> [ ! <span class="variable">$1</span> ]; <span class="keyword">then</span>  </span><br><span class="line">       <span class="variable">$1</span>=<span class="string">'default'</span>  </span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure><p>参考： <a href="http://www.mojidong.com/linux/2012/09/08/shell-set-default-value/" target="_blank" rel="noopener">shell中给变量设置默认值</a></p><h2 id="Shell-中调用其它-Shell"><a href="#Shell-中调用其它-Shell" class="headerlink" title="Shell 中调用其它 Shell"></a>Shell 中调用其它 Shell</h2><ul><li>fork</li></ul><p>terminal 会新开一个子 Shell 执行脚本，子 Shell 可以从父 Shell 继承环境变量，但是子 Shell 中的环境变量不会带回给父 Shell。</p><ul><li>source</li></ul><p><code>source</code> 与 <code>fork</code> 的区别是不新开一个子 Shell 来执行被调用的脚本，而是在同一个 Shell 中执行。所以被调用的脚本中声明的变量和环境变量, 都可以在主脚本中进行获取和使用。</p><ul><li>exec</li></ul><p><code>exec</code> 与 <code>fork</code> 不同，不需要新开一个子 Shell 来执行被调用的脚本. 被调用的脚本与父脚本在同一个 Shell 内执行。<strong>但是使用 <code>exec</code> 调用一个新脚本以后, 父脚本中 <code>exec</code> 行之后的内容就不会再执行了。这是 exec 和 source 的区别。</strong></p><p>参考： <a href="https://blog.csdn.net/simple_the_best/article/details/76285429" target="_blank" rel="noopener">在 Shell 脚本中调用另一个 Shell 脚本的三种方式</a></p><h2 id="处理命令行参数"><a href="#处理命令行参数" class="headerlink" title="处理命令行参数"></a>处理命令行参数</h2><ul><li>手工处理方式</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> arg <span class="keyword">in</span> <span class="string">"$*"</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$arg</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure><p>因为手工处理高度依赖于命令行上所传参数的位置，所以一般都只用来处理较简单的参数。</p><ul><li>getopts</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">getopts</span> <span class="string">"a:bc"</span> arg <span class="comment"># 选项后面的冒号表示该选项需要参数</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">        <span class="keyword">case</span> <span class="variable">$arg</span> <span class="keyword">in</span></span><br><span class="line">             a)</span><br><span class="line">                <span class="built_in">echo</span> <span class="string">"a's arg: <span class="variable">$OPTARG</span>"</span> <span class="comment"># 参数存在$OPTARG中</span></span><br><span class="line">                ;;</span><br><span class="line">             b)</span><br><span class="line">                <span class="built_in">echo</span> <span class="string">"b"</span></span><br><span class="line">                ;;</span><br><span class="line">             c)</span><br><span class="line">                <span class="built_in">echo</span> <span class="string">"c"</span></span><br><span class="line">                ;;</span><br><span class="line">             ?)  <span class="comment"># 当有不认识的选项的时候arg为?</span></span><br><span class="line">                <span class="built_in">echo</span> <span class="string">"unkonw argument"</span></span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">        ;;</span><br><span class="line">        <span class="keyword">esac</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure><p><code>getopts</code> 是由bash内置的，它不支持长选项。</p><ul><li>getopt</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><p><code>getopt</code> 和 <code>getopts</code> 功能相似但又不完全相同，<code>getopt</code> 是独立的可执行文件</p><p>参考：</p><ul><li><a href="https://blog.linuxeye.cn/389.html" target="_blank" rel="noopener">getopt：命令行选项、参数处理</a></li><li><a href="http://www.cnblogs.com/FrankTan/archive/2010/03/01/1634516.html" target="_blank" rel="noopener">Shell 中命令行选项/参数处理</a></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;安装-Node-js&quot;&gt;&lt;a href=&quot;#安装-Node-js&quot; class=&quot;headerlink&quot; title=&quot;安装 Node.js&quot;&gt;&lt;/a&gt;安装 Node.js&lt;/h2&gt;&lt;p&gt;‘&lt;/p&gt;
-
+        &lt;h2 id=&quot;设置默认值&quot;&gt;&lt;a href=&quot;#设置默认值&quot; class=&quot;headerlink&quot; title=&quot;设置默认值&quot;&gt;&lt;/a&gt;设置默认值&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;变量为 null 时，则 var=b&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlig
       
     
     </summary>
     
-      <category term="Node.js" scheme="https://huangwenren.github.io/categories/Node-js/"/>
+      <category term="Shell" scheme="https://huangwenren.github.io/categories/Shell/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>学习资源</title>
+    <link href="https://huangwenren.github.io/2018/09/06/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/"/>
+    <id>https://huangwenren.github.io/2018/09/06/学习资源/</id>
+    <published>2018-09-06T13:00:22.000Z</published>
+    <updated>2018-09-06T13:03:29.414Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="笔面试相关"><a href="#笔面试相关" class="headerlink" title="笔面试相关"></a>笔面试相关</h2><ul><li><a href="https://wizardforcel.gitbooks.io/the-art-of-programming-by-july/content/index.html" target="_blank" rel="noopener">《编程之法：面试和算法心得》</a></li></ul><p>-<a href=""></a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;笔面试相关&quot;&gt;&lt;a href=&quot;#笔面试相关&quot; class=&quot;headerlink&quot; title=&quot;笔面试相关&quot;&gt;&lt;/a&gt;笔面试相关&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://wizardforcel.gitbooks.io/the-art-of
+      
+    
+    </summary>
+    
+      <category term="资源" scheme="https://huangwenren.github.io/categories/%E8%B5%84%E6%BA%90/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Dockerfile入门</title>
+    <link href="https://huangwenren.github.io/2018/09/06/Dockerfile%E5%85%A5%E9%97%A8/"/>
+    <id>https://huangwenren.github.io/2018/09/06/Dockerfile入门/</id>
+    <published>2018-09-06T12:38:23.000Z</published>
+    <updated>2018-09-06T12:56:50.480Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前台运行"><a href="#前台运行" class="headerlink" title="前台运行"></a>前台运行</h2><ol><li>方法一：通过循环实现</li></ol><p>eg：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">FROM $&#123;BASE_IMAGE&#125;</span><br><span class="line"></span><br><span class="line">MAINTAINER huangwenren &lt;huangwenren1994@foxmail.com&gt;</span><br><span class="line"></span><br><span class="line">COPY ./bin/configtxgen /usr/local/bin/</span><br><span class="line"></span><br><span class="line">RUN chmod +x /usr/local/bin/configtxgen</span><br><span class="line"></span><br><span class="line">COPY ./configtx.yaml /etc/hyperledger/</span><br><span class="line"></span><br><span class="line">RUN apt-get install -y apg</span><br><span class="line"></span><br><span class="line">EXPOSE 7054</span><br><span class="line"></span><br><span class="line">CMD [ &quot;sh&quot;, &quot;-c&quot;, &quot;while true; do echo &apos;fabric-ca-client is running&apos;; sleep 10; done&quot; ]</span><br></pre></td></tr></table></figure><ol start="2"><li>方法二： 通过 supervisor 管理</li></ol><p>eg:</p><ol start="3"><li>方法三： 如果该程序支持前台运行，则可直接要求程序以前台形式运行</li></ol><p>eg：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CMD [&quot;nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]</span><br></pre></td></tr></table></figure><h2 id="Dockerfile-拷贝保存子目录结构"><a href="#Dockerfile-拷贝保存子目录结构" class="headerlink" title="Dockerfile 拷贝保存子目录结构"></a>Dockerfile 拷贝保存子目录结构</h2><p>错误方式：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">COPY files/* /files/</span><br></pre></td></tr></table></figure><p>正确方式：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">COPY files/ /files/</span><br></pre></td></tr></table></figure><p>两者区别在于有无 * 标</p><p>参考： <a href="https://codeday.me/bug/20170910/68286.html" target="_blank" rel="noopener">Dockerfile 拷贝保存子目录结构</a></p><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul><li><a href="https://yeasy.gitbooks.io/docker_practice/content/" target="_blank" rel="noopener">Docker —— 从入门到实践</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前台运行&quot;&gt;&lt;a href=&quot;#前台运行&quot; class=&quot;headerlink&quot; title=&quot;前台运行&quot;&gt;&lt;/a&gt;前台运行&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;方法一：通过循环实现&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;eg：&lt;/p&gt;
+&lt;figure class=&quot;highligh
+      
+    
+    </summary>
+    
+      <category term="Docker" scheme="https://huangwenren.github.io/categories/Docker/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>first-network测试</title>
+    <link href="https://huangwenren.github.io/2018/09/02/balance-transfer%E6%B5%8B%E8%AF%95/"/>
+    <id>https://huangwenren.github.io/2018/09/02/balance-transfer测试/</id>
+    <published>2018-09-02T09:41:45.424Z</published>
+    <updated>2018-09-02T11:06:50.389Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="下载-fabric-sample-代码"><a href="#下载-fabric-sample-代码" class="headerlink" title="下载 fabric-sample 代码"></a>下载 fabric-sample 代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/hyperledger/fabric-samples.git</span><br></pre></td></tr></table></figure><h2 id="进入-fabric-sample-目录"><a href="#进入-fabric-sample-目录" class="headerlink" title="进入 fabric-sample 目录"></a>进入 fabric-sample 目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> fabric-samples</span><br></pre></td></tr></table></figure><h2 id="下载二进制文件，需指定当前-fabric-sample-的版本"><a href="#下载二进制文件，需指定当前-fabric-sample-的版本" class="headerlink" title="下载二进制文件，需指定当前 fabric-sample 的版本"></a>下载二进制文件，需指定当前 fabric-sample 的版本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://goo.gl/6wtTN5 | bash -s <span class="variable">$&#123;VERSION&#125;</span></span><br></pre></td></tr></table></figure><p>最近发现了一个<strong>速度更快的方法</strong>。<br>这个脚本文件其实在 fabric 中就已经存在了，直接利用 fabric 中的脚本也可以得到与上面命令一样的效果，具体如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cp <span class="variable">$GOPATH</span>/src/github.com/hyperledger/fabric/scripts/bootstrap.sh ./</span><br><span class="line"></span><br><span class="line">chmod +x bootstrap.sh</span><br><span class="line"></span><br><span class="line">./bootstrap.sh</span><br></pre></td></tr></table></figure><h2 id="进入-first-network-目录"><a href="#进入-first-network-目录" class="headerlink" title="进入 first-network 目录"></a>进入 first-network 目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> first-network</span><br></pre></td></tr></table></figure><h2 id="方法-1"><a href="#方法-1" class="headerlink" title="方法 1"></a>方法 1</h2><ol><li>终端 1</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">./runApp.sh</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">2. 终端 2</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">sudo yum install -y jq</span><br><span class="line"></span><br><span class="line">./testApp.sh</span><br></pre></td></tr></table></figure><h2 id="方法-2"><a href="#方法-2" class="headerlink" title="方法 2"></a>方法 2</h2><ol><li>终端 1</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker-compose -f artifacts/docker-compose.yaml up</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">2. 终端 2</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://blog.csdn.net/zhayujie5200/article/details/79684032" target="_blank" rel="noopener">balance transfer（一）启动示例</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;下载-fabric-sample-代码&quot;&gt;&lt;a href=&quot;#下载-fabric-sample-代码&quot; class=&quot;headerlink&quot; title=&quot;下载 fabric-sample 代码&quot;&gt;&lt;/a&gt;下载 fabric-sample 代码&lt;/h2&gt;&lt;figu
+      
+    
+    </summary>
+    
+      <category term="Fabric" scheme="https://huangwenren.github.io/categories/Fabric/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CouchDB入门</title>
+    <link href="https://huangwenren.github.io/2018/08/29/CouchDB%E5%85%A5%E9%97%A8/"/>
+    <id>https://huangwenren.github.io/2018/08/29/CouchDB入门/</id>
+    <published>2018-08-29T14:29:10.000Z</published>
+    <updated>2018-08-29T14:35:40.014Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>CouchDB是一个开源的面向文档的数据库管理系统。</p><h2 id="CouchDB-与-MongoDB-对比"><a href="#CouchDB-与-MongoDB-对比" class="headerlink" title="CouchDB 与 MongoDB 对比"></a>CouchDB 与 MongoDB 对比</h2><p>满足海量存储需求和访问的面向文档的数据库：MongoDB，CouchDB</p><p>面向文档的非关系数据库主要解决的问题不是高性能的并发读写，而是保证海量数据存储的同时，具有良好的查询性能。MongoDB是用C++开发的，而 CouchDB则是Erlang开发的：</p><ol><li>MongoDB</li></ol><p>MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。他支持的数据结构非常松散，是类似 json 的 bjson 格式，因此可以存储比较复杂的数据类型。Mongo 最大的特点是他支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。</p><p>Mongo 主要解决的是海量数据的访问效率问题，根据官方的文档，当数据量达到50GB以上的时候，Mong o的数据库访问速度是 MySQL 的 10 倍以 上。Mongo 的并发读写效率不是特别出色，根据官方提供的性能测试表明，大约每秒可以处理 0.5 万－1.5 万次读写请求。</p><p>因为 Mongo 主要是支持海量数据存储的，所以 Mongo 还自带了一个出色的分布式文件系统 GridFS，可以支持海量的数据存储，但我也看到有些评论认为 GridFS 性能不佳，这一点还是有待亲自做点测试来验证了。</p><p>最后由于 Mongo 可以支持复杂的数据结构，而且带有强大的数据查询功能，因此非常受到欢迎，很多项目都考虑用 MongoDB 来替代 MySQL 来实现不是 特别复杂的 Web 应用，比方说 why we migrated from MySQL to MongoDB 就是一个真实的从MySQL迁移到 MongoDB 的案例，由于数据量实在太大，所以迁移到了 Mongo 上面，数据查询的速度得到了非常显著的提升。</p><p>MongoD B也有一个 ruby 的项目 MongoMapper，是模仿 Merb 的 DataMapper 编写的 MongoDB 的接口，使用起来非常简单，几乎和 DataMapper 一模一样，功能非常强大易用。</p><ol start="2"><li>CouchDB</li></ol><p>CouchDB现在是一个非常有名气的项目，似乎不用多介绍了。但是我却对 CouchDB 没有什么兴趣，主要是因为 CouchDB 仅仅提供了基于 HTTP REST 的接口，因此 CouchDB 单纯从并发读写性能来说，是非常糟糕的，这让我立刻抛弃了对 CouchDB 的兴趣。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;CouchDB是一个开源的面向文档的数据库管理系统。&lt;/p&gt;
+&lt;h2 id=&quot;CouchDB-与-MongoDB-对比&quot;&gt;&lt;a href=&quot;
+      
+    
+    </summary>
+    
+      <category term="CouchDB" scheme="https://huangwenren.github.io/categories/CouchDB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>BitMap算法</title>
+    <link href="https://huangwenren.github.io/2018/08/29/BitMap%E7%AE%97%E6%B3%95/"/>
+    <id>https://huangwenren.github.io/2018/08/29/BitMap算法/</id>
+    <published>2018-08-29T06:14:39.000Z</published>
+    <updated>2018-08-29T06:15:03.122Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="https://huangwenren.github.io/categories/Algorithm/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux下密码生成软件APG</title>
+    <link href="https://huangwenren.github.io/2018/08/29/Linux%E4%B8%8B%E5%AF%86%E7%A0%81%E7%94%9F%E6%88%90%E8%BD%AF%E4%BB%B6APG/"/>
+    <id>https://huangwenren.github.io/2018/08/29/Linux下密码生成软件APG/</id>
+    <published>2018-08-29T03:48:36.000Z</published>
+    <updated>2018-08-29T03:59:14.319Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>APG是一款轻巧的密码生成软件，全称 Automated Password Generator（简称“APG”）。APG 在 Linux 使用，当然也有 Windows 版的，命令简单，可以批量生成，当需要若干随机密码时，可用该软件。</p><h2 id="APG-的使用"><a href="#APG-的使用" class="headerlink" title="APG 的使用"></a>APG 的使用</h2><p>直接输入 <code>apg</code> 默认生成 6 个随机密码</p><h2 id="APG-的可选参数"><a href="#APG-的可选参数" class="headerlink" title="APG 的可选参数"></a>APG 的可选参数</h2><p>m 指生成密码的位数，默认是8位</p><p>M mode  使用模式生成密码</p><p>-M mode S, s, N, n, C, c, L, l.</p><p>S  每个密码必须都有特殊字符</p><p>s  包含特殊字条但不一定每个都有</p><p>N  每个密码必需含有数字</p><p>n  包含数字</p><p>C  每个密码必需有大写字母</p><p>c  包含大写字母</p><p>L  每个密码必需有小写字母</p><p>l  包含有小写</p><h2 id="具体例子"><a href="#具体例子" class="headerlink" title="具体例子"></a>具体例子</h2><p>随机生成 7 个 16 位的包含大小写、特殊字符、数字的密码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apg -M SNCL -m 16 -n 7</span><br></pre></td></tr></table></figure><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://blog.csdn.net/xhch2009/article/details/18222263" target="_blank" rel="noopener">Linux下密码生成软件APG</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;APG是一款轻巧的密码生成软件，全称 Automated Password Generator（简称“APG”）。APG 在 Linux 使
+      
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://huangwenren.github.io/categories/Linux/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>利用Vagrant搭建Fabric开发环境</title>
+    <link href="https://huangwenren.github.io/2018/08/28/%E5%88%A9%E7%94%A8Vagrant%E6%90%AD%E5%BB%BAFabric%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>https://huangwenren.github.io/2018/08/28/利用Vagrant搭建Fabric开发环境/</id>
+    <published>2018-08-28T14:52:34.000Z</published>
+    <updated>2018-08-28T14:52:59.747Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Fabric" scheme="https://huangwenren.github.io/categories/Fabric/"/>
     
     
   </entry>
@@ -123,9 +278,16 @@
     <link href="https://huangwenren.github.io/2018/08/27/TopK%E9%97%AE%E9%A2%98/"/>
     <id>https://huangwenren.github.io/2018/08/27/TopK问题/</id>
     <published>2018-08-27T03:44:40.549Z</published>
-    <updated>2018-08-27T03:45:11.268Z</updated>
+    <updated>2018-09-06T13:05:27.079Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><h3 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h3><h3 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h3><h3 id="解法三"><a href="#解法三" class="headerlink" title="解法三"></a>解法三</h3><h3 id="解法四"><a href="#解法四" class="headerlink" title="解法四"></a>解法四</h3><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul><li><a href="https://songlee24.github.io/2015/03/21/hua-wei-OJ2051/" target="_blank" rel="noopener">华为OJ2051-最小的K个数（Top K问题）</a></li></ul>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;解法&quot;&gt;&lt;a href=&quot;#解法&quot; class=&quot;headerlink&quot; title=&quot;解法&quot;&gt;&lt;/a&gt;解法&lt;/h2&gt;&lt;h3 id=&quot;解法一&quot;&gt;&lt;a href=&quot;#解法一&quot; class=&quot;headerlink&quot; title=&quot;解法一&quot;&gt;&lt;/a&gt;解法一&lt;/h3&gt;&lt;h
+      
     
     </summary>
     
@@ -205,15 +367,15 @@
     <link href="https://huangwenren.github.io/2018/08/22/docker%E5%85%A5%E9%97%A8/"/>
     <id>https://huangwenren.github.io/2018/08/22/docker入门/</id>
     <published>2018-08-22T08:54:03.000Z</published>
-    <updated>2018-08-28T13:43:53.593Z</updated>
+    <updated>2018-08-28T14:54:50.768Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h2><h2 id="删除所有容器"><a href="#删除所有容器" class="headerlink" title="删除所有容器"></a>删除所有容器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f $(docker ps -aq)</span><br></pre></td></tr></table></figure><h2 id="删除所有镜像"><a href="#删除所有镜像" class="headerlink" title="删除所有镜像"></a>删除所有镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f $(docker images -aq)</span><br></pre></td></tr></table></figure><h2 id="容器中查看-Linux-版本"><a href="#容器中查看-Linux-版本" class="headerlink" title="容器中查看 Linux 版本"></a>容器中查看 Linux 版本</h2><p>正确的姿势：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/issue</span><br></pre></td></tr></table></figure></p><p>错误的姿势：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/version </span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">uname -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上诉两个方法查到的是宿主机的系统</span></span><br></pre></td></tr></table></figure></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#确保 yum 包更新到最新</span></span><br><span class="line">sudo yum update</span><br><span class="line"></span><br><span class="line"><span class="comment">#执行 Docker 安装脚本,执行这个脚本会添加 docker.repo 源并安装 Docker。</span></span><br><span class="line">curl -fsSL https://get.docker.com/ | sh</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动 Docker 进程</span></span><br><span class="line">sudo service docker start</span><br><span class="line"></span><br><span class="line"><span class="comment">#验证 docker 是否安装成功并在容器中执行一个测试的镜像</span></span><br><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure><h2 id="删除所有容器"><a href="#删除所有容器" class="headerlink" title="删除所有容器"></a>删除所有容器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f $(docker ps -aq)</span><br></pre></td></tr></table></figure><h2 id="删除所有镜像"><a href="#删除所有镜像" class="headerlink" title="删除所有镜像"></a>删除所有镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f $(docker images -aq)</span><br></pre></td></tr></table></figure><h2 id="容器中查看-Linux-版本"><a href="#容器中查看-Linux-版本" class="headerlink" title="容器中查看 Linux 版本"></a>容器中查看 Linux 版本</h2><p>正确的姿势：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/issue</span><br></pre></td></tr></table></figure></p><p>错误的姿势：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/version </span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">uname -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上诉两个方法查到的是宿主机的系统</span></span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;安装-Docker&quot;&gt;&lt;a href=&quot;#安装-Docker&quot; class=&quot;headerlink&quot; title=&quot;安装 Docker&quot;&gt;&lt;/a&gt;安装 Docker&lt;/h2&gt;&lt;h2 id=&quot;删除所有容器&quot;&gt;&lt;a href=&quot;#删除所有容器&quot; class=&quot;head
+        &lt;h2 id=&quot;安装-Docker&quot;&gt;&lt;a href=&quot;#安装-Docker&quot; class=&quot;headerlink&quot; title=&quot;安装 Docker&quot;&gt;&lt;/a&gt;安装 Docker&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
       
     
     </summary>
@@ -272,66 +434,20 @@
     <link href="https://huangwenren.github.io/2018/08/21/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>https://huangwenren.github.io/2018/08/21/Linux常用命令/</id>
     <published>2018-08-21T07:49:22.000Z</published>
-    <updated>2018-08-28T13:55:01.888Z</updated>
+    <updated>2018-09-03T03:22:14.728Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 遍历文件夹查找文本内容</span></span><br><span class="line">grep -r <span class="string">"查找文本内容"</span> *</span><br></pre></td></tr></table></figure><h1 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h1><ul><li>全局替换  %s/{old}/{new}/g</li></ul><h1 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h1><h1 id="ssh-copy-id"><a href="#ssh-copy-id" class="headerlink" title="ssh-copy-id"></a>ssh-copy-id</h1><h1 id="find"><a href="#find" class="headerlink" title="find"></a>find</h1><h1 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h1><p># </p>]]></content>
+    <content type="html"><![CDATA[<h2 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 遍历文件夹查找文本内容</span></span><br><span class="line">grep -r <span class="string">"查找文本内容"</span> *</span><br></pre></td></tr></table></figure><h2 id="sed"><a href="#sed" class="headerlink" title="sed"></a>sed</h2><ul><li>全局替换  <h2 id="awk"><a href="#awk" class="headerlink" title="awk"></a>awk</h2></li></ul><h2 id="ssh-copy-id"><a href="#ssh-copy-id" class="headerlink" title="ssh-copy-id"></a>ssh-copy-id</h2><h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><h2 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h2><p><a href="https://www.cnblogs.com/jyaray/archive/2011/04/30/2033362.html" target="_blank" rel="noopener">tar压缩解压缩命令详解</a></p><h2 id="curl"><a href="#curl" class="headerlink" title="curl"></a>curl</h2><h2 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h2><h2 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h2><p>%s/{old}/{new}/g</p><h2 id="查看文件夹大小"><a href="#查看文件夹大小" class="headerlink" title="查看文件夹大小"></a>查看文件夹大小</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du -h --max-depth=1 ./</span><br></pre></td></tr></table></figure><h2 id="查看磁盘大小"><a href="#查看磁盘大小" class="headerlink" title="查看磁盘大小"></a>查看磁盘大小</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="查看内存大小"><a href="#查看内存大小" class="headerlink" title="查看内存大小"></a>查看内存大小</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="关闭进程"><a href="#关闭进程" class="headerlink" title="关闭进程"></a>关闭进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>TRUNCATE 只能用来清除整个表的数据，而 DELETE 可以根据条件删除某些记录。</p><p>TRUNCATE 删除是不可恢复的！！！</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;grep&quot;&gt;&lt;a href=&quot;#grep&quot; class=&quot;headerlink&quot; title=&quot;grep&quot;&gt;&lt;/a&gt;grep&lt;/h1&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre
+        &lt;h2 id=&quot;grep&quot;&gt;&lt;a href=&quot;#grep&quot; class=&quot;headerlink&quot; title=&quot;grep&quot;&gt;&lt;/a&gt;grep&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre
       
     
     </summary>
     
       <category term="Linux" scheme="https://huangwenren.github.io/categories/Linux/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo添加分类及标签</title>
-    <link href="https://huangwenren.github.io/2018/08/21/Hexo%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/"/>
-    <id>https://huangwenren.github.io/2018/08/21/Hexo添加分类及标签/</id>
-    <published>2018-08-21T07:31:58.000Z</published>
-    <updated>2018-08-27T14:58:30.103Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="只给文章添加-categories-属性"><a href="#只给文章添加-categories-属性" class="headerlink" title="只给文章添加 categories 属性"></a>只给文章添加 categories 属性</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2018-08-21 15:31:58</span><br><span class="line">categories: </span><br><span class="line">- Hexo 使用攻略</span><br><span class="line">---</span><br></pre></td></tr></table></figure><h1 id="只给文章添加-tags-属性"><a href="#只给文章添加-tags-属性" class="headerlink" title="只给文章添加 tags 属性"></a>只给文章添加 tags 属性</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2018-08-21 15:31:58</span><br><span class="line">tags: </span><br><span class="line">- Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure><h1 id="给文章添加-categories-和-tags-属性"><a href="#给文章添加-categories-和-tags-属性" class="headerlink" title="给文章添加 categories 和 tags 属性"></a>给文章添加 categories 和 tags 属性</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo添加分类及标签</span><br><span class="line">date: 2018-08-21 15:31:58</span><br><span class="line">categories: </span><br><span class="line">- Hexo 使用攻略</span><br><span class="line">tags: </span><br><span class="line">- Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure><p>我们可以打开 scaffolds/post.md 文件，在 tages: 上面加入 categories: ，保存之后执行 hexo new ${title} 命令生成的文件，页面里就有 categories: 项了。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;只给文章添加-categories-属性&quot;&gt;&lt;a href=&quot;#只给文章添加-categories-属性&quot; class=&quot;headerlink&quot; title=&quot;只给文章添加 categories 属性&quot;&gt;&lt;/a&gt;只给文章添加 categories 属性&lt;/h1&gt;&lt;
-      
-    
-    </summary>
-    
-      <category term="Hexo" scheme="https://huangwenren.github.io/categories/Hexo/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://huangwenren.github.io/2018/08/18/hello-world/"/>
-    <id>https://huangwenren.github.io/2018/08/18/hello-world/</id>
-    <published>2018-08-18T13:54:37.609Z</published>
-    <updated>2018-08-27T15:02:12.373Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-      <category term="Hexo" scheme="https://huangwenren.github.io/categories/Hexo/"/>
     
     
   </entry>

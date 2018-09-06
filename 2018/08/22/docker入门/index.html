@@ -96,17 +96,17 @@
 
 
 
-<meta name="description" content="安装 Docker删除所有容器1docker rm -f $(docker ps -aq) 删除所有镜像1docker rmi -f $(docker images -aq) 容器中查看 Linux 版本正确的姿势：1cat /etc/issue 错误的姿势：12345cat /proc/version # 或者uname -a# 上诉两个方法查到的是宿主机的系统">
+<meta name="description" content="安装 Docker1234567891011#确保 yum 包更新到最新sudo yum update#执行 Docker 安装脚本,执行这个脚本会添加 docker.repo 源并安装 Docker。curl -fsSL https://get.docker.com/ | sh#启动 Docker 进程sudo service docker start#验证 docker 是否安装成功并在容器中">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker入门">
 <meta property="og:url" content="https://huangwenren.github.io/2018/08/22/docker入门/index.html">
 <meta property="og:site_name" content="Wenren&#39;s World">
-<meta property="og:description" content="安装 Docker删除所有容器1docker rm -f $(docker ps -aq) 删除所有镜像1docker rmi -f $(docker images -aq) 容器中查看 Linux 版本正确的姿势：1cat /etc/issue 错误的姿势：12345cat /proc/version # 或者uname -a# 上诉两个方法查到的是宿主机的系统">
+<meta property="og:description" content="安装 Docker1234567891011#确保 yum 包更新到最新sudo yum update#执行 Docker 安装脚本,执行这个脚本会添加 docker.repo 源并安装 Docker。curl -fsSL https://get.docker.com/ | sh#启动 Docker 进程sudo service docker start#验证 docker 是否安装成功并在容器中">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-28T13:43:53.593Z">
+<meta property="og:updated_time" content="2018-08-28T14:54:50.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker入门">
-<meta name="twitter:description" content="安装 Docker删除所有容器1docker rm -f $(docker ps -aq) 删除所有镜像1docker rmi -f $(docker images -aq) 容器中查看 Linux 版本正确的姿势：1cat /etc/issue 错误的姿势：12345cat /proc/version # 或者uname -a# 上诉两个方法查到的是宿主机的系统">
+<meta name="twitter:description" content="安装 Docker1234567891011#确保 yum 包更新到最新sudo yum update#执行 Docker 安装脚本,执行这个脚本会添加 docker.repo 源并安装 Docker。curl -fsSL https://get.docker.com/ | sh#启动 Docker 进程sudo service docker start#验证 docker 是否安装成功并在容器中">
 
 
 
@@ -369,7 +369,8 @@
       
 
       
-        <h2 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h2><h2 id="删除所有容器"><a href="#删除所有容器" class="headerlink" title="删除所有容器"></a>删除所有容器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f $(docker ps -aq)</span><br></pre></td></tr></table></figure>
+        <h2 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#确保 yum 包更新到最新</span></span><br><span class="line">sudo yum update</span><br><span class="line"></span><br><span class="line"><span class="comment">#执行 Docker 安装脚本,执行这个脚本会添加 docker.repo 源并安装 Docker。</span></span><br><span class="line">curl -fsSL https://get.docker.com/ | sh</span><br><span class="line"></span><br><span class="line"><span class="comment">#启动 Docker 进程</span></span><br><span class="line">sudo service docker start</span><br><span class="line"></span><br><span class="line"><span class="comment">#验证 docker 是否安装成功并在容器中执行一个测试的镜像</span></span><br><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure>
+<h2 id="删除所有容器"><a href="#删除所有容器" class="headerlink" title="删除所有容器"></a>删除所有容器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f $(docker ps -aq)</span><br></pre></td></tr></table></figure>
 <h2 id="删除所有镜像"><a href="#删除所有镜像" class="headerlink" title="删除所有镜像"></a>删除所有镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f $(docker images -aq)</span><br></pre></td></tr></table></figure>
 <h2 id="容器中查看-Linux-版本"><a href="#容器中查看-Linux-版本" class="headerlink" title="容器中查看 Linux 版本"></a>容器中查看 Linux 版本</h2><p>正确的姿势：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/issue</span><br></pre></td></tr></table></figure></p>
 <p>错误的姿势：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/version </span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">uname -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上诉两个方法查到的是宿主机的系统</span></span><br></pre></td></tr></table></figure></p>
@@ -514,7 +515,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -525,7 +526,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
