@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Wenren&#39;s World">
 <meta property="og:description" content="安装 Docker1234567891011#确保 yum 包更新到最新sudo yum update#执行 Docker 安装脚本,执行这个脚本会添加 docker.repo 源并安装 Docker。curl -fsSL https://get.docker.com/ | sh#启动 Docker 进程sudo service docker start#验证 docker 是否安装成功并在容器中">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-28T14:54:50.768Z">
+<meta property="og:updated_time" content="2018-09-09T11:05:34.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="docker入门">
 <meta name="twitter:description" content="安装 Docker1234567891011#确保 yum 包更新到最新sudo yum update#执行 Docker 安装脚本,执行这个脚本会添加 docker.repo 源并安装 Docker。curl -fsSL https://get.docker.com/ | sh#启动 Docker 进程sudo service docker start#验证 docker 是否安装成功并在容器中">
@@ -374,6 +374,7 @@
 <h2 id="删除所有镜像"><a href="#删除所有镜像" class="headerlink" title="删除所有镜像"></a>删除所有镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f $(docker images -aq)</span><br></pre></td></tr></table></figure>
 <h2 id="容器中查看-Linux-版本"><a href="#容器中查看-Linux-版本" class="headerlink" title="容器中查看 Linux 版本"></a>容器中查看 Linux 版本</h2><p>正确的姿势：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/issue</span><br></pre></td></tr></table></figure></p>
 <p>错误的姿势：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/version </span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">uname -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上诉两个方法查到的是宿主机的系统</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="数据清理"><a href="#数据清理" class="headerlink" title="数据清理"></a>数据清理</h2><p><a href="http://note.qidong.name/2017/06/26/docker-clean/" target="_blank" rel="noopener"></a></p>
 
       
     </div>
@@ -515,7 +516,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -526,7 +527,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -616,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Docker"><span class="nav-number">1.</span> <span class="nav-text">安装 Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除所有容器"><span class="nav-number">2.</span> <span class="nav-text">删除所有容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除所有镜像"><span class="nav-number">3.</span> <span class="nav-text">删除所有镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器中查看-Linux-版本"><span class="nav-number">4.</span> <span class="nav-text">容器中查看 Linux 版本</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Docker"><span class="nav-number">1.</span> <span class="nav-text">安装 Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除所有容器"><span class="nav-number">2.</span> <span class="nav-text">删除所有容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除所有镜像"><span class="nav-number">3.</span> <span class="nav-text">删除所有镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器中查看-Linux-版本"><span class="nav-number">4.</span> <span class="nav-text">容器中查看 Linux 版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据清理"><span class="nav-number">5.</span> <span class="nav-text">数据清理</span></a></li></ol></div>
             
 
           </div>

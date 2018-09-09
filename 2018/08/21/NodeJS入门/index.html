@@ -96,17 +96,17 @@
 
 
 
-<meta name="description" content="Node.js 安装Node.js 升级">
+<meta name="description" content="Node.js 安装Node.js 升级 安装  n  1npm install -g n  升级 node 到最新稳定版本  1n stable 除了安装最新的稳定版本，也可以指定要安装的 node 版本 eg: 1n v8.9.4 node.js 升级——最简单的方法 npm 安装指定版本组件 首先确保文件目录下含有 package.json 。如果没有的话，可以通过 npm init 创建。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node.js 入门">
 <meta property="og:url" content="https://huangwenren.github.io/2018/08/21/NodeJS入门/index.html">
 <meta property="og:site_name" content="Wenren&#39;s World">
-<meta property="og:description" content="Node.js 安装Node.js 升级">
+<meta property="og:description" content="Node.js 安装Node.js 升级 安装  n  1npm install -g n  升级 node 到最新稳定版本  1n stable 除了安装最新的稳定版本，也可以指定要安装的 node 版本 eg: 1n v8.9.4 node.js 升级——最简单的方法 npm 安装指定版本组件 首先确保文件目录下含有 package.json 。如果没有的话，可以通过 npm init 创建。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-06T12:53:30.847Z">
+<meta property="og:updated_time" content="2018-09-09T11:53:57.609Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js 入门">
-<meta name="twitter:description" content="Node.js 安装Node.js 升级">
+<meta name="twitter:description" content="Node.js 安装Node.js 升级 安装  n  1npm install -g n  升级 node 到最新稳定版本  1n stable 除了安装最新的稳定版本，也可以指定要安装的 node 版本 eg: 1n v8.9.4 node.js 升级——最简单的方法 npm 安装指定版本组件 首先确保文件目录下含有 package.json 。如果没有的话，可以通过 npm init 创建。">
 
 
 
@@ -369,7 +369,32 @@
       
 
       
-        <h2 id="Node-js-安装"><a href="#Node-js-安装" class="headerlink" title="Node.js 安装"></a>Node.js 安装</h2><h2 id="Node-js-升级"><a href="#Node-js-升级" class="headerlink" title="Node.js 升级"></a>Node.js 升级</h2>
+        <h2 id="Node-js-安装"><a href="#Node-js-安装" class="headerlink" title="Node.js 安装"></a>Node.js 安装</h2><h2 id="Node-js-升级"><a href="#Node-js-升级" class="headerlink" title="Node.js 升级"></a>Node.js 升级</h2><ol>
+<li>安装  n</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g n</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>升级 node 到最新稳定版本</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n stable</span><br></pre></td></tr></table></figure>
+<p>除了安装最新的稳定版本，也可以指定要安装的 node 版本</p>
+<p>eg:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n v8.9.4</span><br></pre></td></tr></table></figure>
+<p><a href="https://segmentfault.com/a/1190000006869650" target="_blank" rel="noopener">node.js 升级——最简单的方法</a></p>
+<h2 id="npm-安装指定版本组件"><a href="#npm-安装指定版本组件" class="headerlink" title="npm 安装指定版本组件"></a>npm 安装指定版本组件</h2><ol>
+<li><p>首先确保文件目录下含有 <strong>package.json</strong> 。如果没有的话，可以通过 <code>npm init</code> 创建。</p>
+</li>
+<li><p>下载指定版本的组件，只需要在组件的后面加上 <strong>@version</strong></p>
+</li>
+</ol>
+<p>eg：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install grpc@1.6.0</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>查看 package.json 文件中是否包含了对应版本的组件。</li>
+</ol>
+<p>参考<a href="https://blog.csdn.net/qq_29457999/article/details/72476778" target="_blank" rel="noopener">npm 安装指定版本组价</a></p>
+<h2 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h2><p>nvm是将每个node版本的模块都会被安装在各自版本的沙箱里面。它的安装目录是在用户文件目录里的，也就是（/Users/(yourname)/.nvm/）。<br>当在使用某个版本的时候，安装的程序都运行在各自版本的沙箱里，这使得它能方便针对不同的项目运行不同的 node 版本，不用再修改系统所使用的node。</p>
+
       
     </div>
     
@@ -510,7 +535,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -521,7 +546,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -611,7 +636,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js-安装"><span class="nav-number">1.</span> <span class="nav-text">Node.js 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js-升级"><span class="nav-number">2.</span> <span class="nav-text">Node.js 升级</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js-安装"><span class="nav-number">1.</span> <span class="nav-text">Node.js 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js-升级"><span class="nav-number">2.</span> <span class="nav-text">Node.js 升级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-安装指定版本组件"><span class="nav-number">3.</span> <span class="nav-text">npm 安装指定版本组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nvm"><span class="nav-number">4.</span> <span class="nav-text">nvm</span></a></li></ol></div>
             
 
           </div>

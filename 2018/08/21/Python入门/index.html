@@ -96,17 +96,17 @@
 
 
 
-<meta name="description" content="todo">
+<meta name="description" content="todoPython 3 连接 MySQL 数据库Python 2.x使用的是 mysqldb 库。Python 3 所使用的连接库是 pymysql，打开cmd输入 pip install pymysql 123456789101112131415161718import pymysql # 打开数据库连接db = pymysql.connect(host=&apos;xxx.xxx.xxx.xxx&apos;,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python入门">
 <meta property="og:url" content="https://huangwenren.github.io/2018/08/21/Python入门/index.html">
 <meta property="og:site_name" content="Wenren&#39;s World">
-<meta property="og:description" content="todo">
+<meta property="og:description" content="todoPython 3 连接 MySQL 数据库Python 2.x使用的是 mysqldb 库。Python 3 所使用的连接库是 pymysql，打开cmd输入 pip install pymysql 123456789101112131415161718import pymysql # 打开数据库连接db = pymysql.connect(host=&apos;xxx.xxx.xxx.xxx&apos;,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-21T07:51:51.299Z">
+<meta property="og:updated_time" content="2018-09-09T11:32:40.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python入门">
-<meta name="twitter:description" content="todo">
+<meta name="twitter:description" content="todoPython 3 连接 MySQL 数据库Python 2.x使用的是 mysqldb 库。Python 3 所使用的连接库是 pymysql，打开cmd输入 pip install pymysql 123456789101112131415161718import pymysql # 打开数据库连接db = pymysql.connect(host=&apos;xxx.xxx.xxx.xxx&apos;,">
 
 
 
@@ -369,7 +369,16 @@
       
 
       
-        <h2 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h2>
+        <h2 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h2><h2 id="Python-3-连接-MySQL-数据库"><a href="#Python-3-连接-MySQL-数据库" class="headerlink" title="Python 3 连接 MySQL 数据库"></a>Python 3 连接 MySQL 数据库</h2><p>Python 2.x使用的是 mysqldb 库。Python 3 所使用的连接库是 pymysql，打开cmd输入 <code>pip install pymysql</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 打开数据库连接</span></span><br><span class="line">db = pymysql.connect(host=<span class="string">'xxx.xxx.xxx.xxx'</span>, port=<span class="number">3306</span>, user=<span class="string">'xxxx'</span>, passwd=<span class="string">'xx'</span>, db=<span class="string">'xxxx'</span>, charset=<span class="string">'utf8'</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用 cursor() 方法创建一个游标对象 cursor</span></span><br><span class="line">cursor = db.cursor()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用 execute()  方法执行 SQL 查询 </span></span><br><span class="line">cursor.execute(<span class="string">"SELECT VERSION()"</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 使用 fetchone() 方法获取单条数据.</span></span><br><span class="line">data = cursor.fetchone()</span><br><span class="line"> </span><br><span class="line"><span class="keyword">print</span> (<span class="string">"Database version : %s "</span> % data)</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 关闭数据库连接</span></span><br><span class="line">db.close()</span><br></pre></td></tr></table></figure>
+<p>参考： <a href="https://blog.csdn.net/qq_38092017/article/details/79645662" target="_blank" rel="noopener">python 3 mysql数据库的连接</a></p>
+<h2 id="Python-从-MySQL-中读取数据"><a href="#Python-从-MySQL-中读取数据" class="headerlink" title="Python 从 MySQL 中读取数据"></a>Python 从 MySQL 中读取数据</h2><ul>
+<li><a href="https://blog.csdn.net/Agly_Clarlie/article/details/51128685" target="_blank" rel="noopener">Python 数据库MySQL中取出数据</a></li>
+</ul>
+<h2 id="python-2-x-删除-MySQL-库中的所有表"><a href="#python-2-x-删除-MySQL-库中的所有表" class="headerlink" title="python 2.x 删除 MySQL 库中的所有表"></a>python 2.x 删除 MySQL 库中的所有表</h2><p>drop-all-tables-entrance.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> imp</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    imp.find_module(<span class="string">'MySQLdb'</span>)</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"start dropping all tables"</span></span><br><span class="line">    os.system(<span class="string">"python ./drop-all-tables.py"</span>)</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"dropped all tables"</span></span><br><span class="line"><span class="keyword">except</span> ImportError:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"install MySQL-python"</span></span><br><span class="line">    os.system(<span class="string">"sudo yum install -y MySQL-python"</span>)</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"start dropping all tables"</span></span><br><span class="line">    os.system(<span class="string">"python ./drop-all-tables.py"</span>)</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"dropped all tables"</span></span><br></pre></td></tr></table></figure>
+<p>drop-all-tables.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> MySQLdb</span><br><span class="line"></span><br><span class="line"><span class="comment"># create connection</span></span><br><span class="line">db = MySQLdb.connect(host=<span class="string">'zj.fabricca.w.qiyi.db'</span>, port=<span class="number">2322</span>, user=<span class="string">'admin'</span>, passwd=<span class="string">'9owlovpotIc'</span>, db=<span class="string">'fabric_ca'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># get cursor</span></span><br><span class="line">cursor = db.cursor()</span><br><span class="line"></span><br><span class="line"><span class="comment"># execute sql to get all sqls</span></span><br><span class="line">cursor.execute(<span class="string">"SELECT CONCAT('DROP TABLE IF EXISTS ', table_name,';') FROM information_schema.`TABLES` WHERE TABLE_SCHEMA='fabric_ca'"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># get all sqls which are used to drop table</span></span><br><span class="line">sqls = cursor.fetchall()</span><br><span class="line"></span><br><span class="line"><span class="comment"># execute sql to drop each table</span></span><br><span class="line"><span class="keyword">for</span> sql <span class="keyword">in</span> sqls:</span><br><span class="line">    cursor.execute(sql[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># close connection</span></span><br><span class="line">db.close()</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -510,7 +519,7 @@
             
               <a href="/archives">
             
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -521,7 +530,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -611,7 +620,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#todo"><span class="nav-number">1.</span> <span class="nav-text">todo</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#todo"><span class="nav-number">1.</span> <span class="nav-text">todo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-3-连接-MySQL-数据库"><span class="nav-number">2.</span> <span class="nav-text">Python 3 连接 MySQL 数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-从-MySQL-中读取数据"><span class="nav-number">3.</span> <span class="nav-text">Python 从 MySQL 中读取数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python-2-x-删除-MySQL-库中的所有表"><span class="nav-number">4.</span> <span class="nav-text">python 2.x 删除 MySQL 库中的所有表</span></a></li></ol></div>
             
 
           </div>
