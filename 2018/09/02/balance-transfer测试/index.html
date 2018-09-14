@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Wenren&#39;s World">
 <meta property="og:description" content="下载 fabric-sample 代码1git clone https://github.com/hyperledger/fabric-samples.git 进入 fabric-sample 目录1cd fabric-samples 下载二进制文件，需指定当前 fabric-sample 的版本1curl -sSL https://goo.gl/6wtTN5 | bash -s $&amp;#123;V">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-09T12:10:36.716Z">
+<meta property="og:updated_time" content="2018-09-09T12:21:13.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="balance-transfer 测试">
 <meta name="twitter:description" content="下载 fabric-sample 代码1git clone https://github.com/hyperledger/fabric-samples.git 进入 fabric-sample 目录1cd fabric-samples 下载二进制文件，需指定当前 fabric-sample 的版本1curl -sSL https://goo.gl/6wtTN5 | bash -s $&amp;#123;V">
@@ -375,14 +375,18 @@
 <p>最近发现了一个<strong>速度更快的方法</strong>。<br>这个脚本文件其实在 fabric 中就已经存在了，直接利用 fabric 中的脚本也可以得到与上面命令一样的效果，具体如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cp <span class="variable">$GOPATH</span>/src/github.com/hyperledger/fabric/scripts/bootstrap.sh ./</span><br><span class="line"></span><br><span class="line">chmod +x bootstrap.sh</span><br><span class="line"></span><br><span class="line">./bootstrap.sh</span><br></pre></td></tr></table></figure>
 <h2 id="进入-balance-transfer-目录"><a href="#进入-balance-transfer-目录" class="headerlink" title="进入 balance-transfer 目录"></a>进入 balance-transfer 目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> balance-transfer</span><br></pre></td></tr></table></figure>
-<h2 id="方法-1"><a href="#方法-1" class="headerlink" title="方法 1"></a>方法 1</h2><ol>
-<li>终端 1<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">./runApp.sh</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">2. 终端 2</span><br><span class="line">```bash</span><br><span class="line">sudo yum install -y jq</span><br><span class="line"></span><br><span class="line">./testApp.sh</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<h2 id="方法-1"><a href="#方法-1" class="headerlink" title="方法 1"></a>方法 1</h2><p>1.终端 1</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./runApp.sh</span><br></pre></td></tr></table></figure>
+<p>2.终端 2</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y jq</span><br><span class="line"></span><br><span class="line">./testApp.sh</span><br></pre></td></tr></table></figure>
 <h2 id="方法-2"><a href="#方法-2" class="headerlink" title="方法 2"></a>方法 2</h2><ol>
 <li>终端 1</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker-compose -f artifacts/docker-compose.yaml up</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">2. 终端 2</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行 node app，监听4000端口：</span></span><br><span class="line">PORT=4000 node app</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose -f artifacts/docker-compose.yaml up</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>终端 2</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行 node app，监听4000端口：</span></span><br><span class="line">PORT=4000 node app</span><br></pre></td></tr></table></figure>
 <ol start="3">
 <li>在终端 3 通过 <code>curl</code> 命令进行测试</li>
 </ol>
